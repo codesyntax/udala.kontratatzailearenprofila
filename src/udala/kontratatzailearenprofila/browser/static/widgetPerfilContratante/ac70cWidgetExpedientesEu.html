@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="ac70cEstilos.css" />
+    <link rel="stylesheet" type="text/css" href="jquery.dataTables.1.9.0.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="jquery.dataTables.themeroller.css"
+    />
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script
+      src="jquery.dataTables.1.9.0.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="ac70cConfigurador.js" type="text/javascript"></script>
+    <script src="ac70cFecha.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="loading-overlay"></div>
+
+    <!-- ESTADOS -->
+    <ul id="tipo_licitaciones" style="visibility: hidden">
+      <li id="li-licitacion-ta" class="selected">
+        <a href="#" id="licitacion-ta">Iragarki guztiak</a>
+        <script type="text/javascript">
+          $("a#licitacion-ta").click(function () {
+            $("#tipoInformacion").attr("value", "ta");
+            $("#titulo").attr("value", "Iragarki guztiak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-ap">
+        <a href="#" id="licitacion-ap">Aldez aurreko iragarkiak</a>
+        <script type="text/javascript">
+          $("a#licitacion-ap").click(function () {
+            $("#tipoInformacion").attr("value", "ap");
+            $("#titulo").attr("value", "Aldez aurreko iragarkiak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-cpm">
+        <a href="#" id="licitacion-cpm">Aurretiazko merkatu kontsulta</a>
+        <script type="text/javascript">
+          $("a#licitacion-cpm").click(function () {
+            $("#tipoInformacion").attr("value", "cpm");
+            $("#titulo").attr("value", "Aurretiazko merkatu kontsulta");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-pac">
+        <a href="#" id="licitacion-pac">Urteko kontratazio plana</a>
+        <script type="text/javascript">
+          $("a#licitacion-pac").click(function () {
+            $("#tipoInformacion").attr("value", "pac");
+            $("#titulo").attr("value", "Urteko kontratatzio plana");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-al">
+        <a href="#" id="licitacion-al">Irekitako Lizitazioak</a>
+        <script type="text/javascript">
+          $("a#licitacion-al").click(function () {
+            $("#tipoInformacion").attr("value", "al");
+            $("#titulo").attr("value", "Irekitako lizitazioak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-ac">
+        <a href="#" id="licitacion-ac">Azterketa Aldian Daudenak</a>
+        <script type="text/javascript">
+          $("a#licitacion-ac").click(function () {
+            $("#tipoInformacion").attr("value", "ac");
+            $("#titulo").attr("value", "Azterketa aldian daudenak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-an">
+        <a href="#" id="licitacion-an">Baliogabetutako Kontratuak</a>
+        <script type="text/javascript">
+          $("a#licitacion-an").click(function () {
+            $("#tipoInformacion").attr("value", "an");
+            $("#titulo").attr("value", "Baliogabetutako kontratuak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-ad">
+        <a href="#" id="licitacion-ad">Esleitutako Kontratuak</a>
+        <script type="text/javascript">
+          $("a#licitacion-ad").click(function () {
+            $("#tipoInformacion").attr("value", "ad");
+            $("#titulo").attr("value", "Esleitutako kontratuak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-de">
+        <a href="#" id="licitacion-de">Bertan Behera Utzitakoak</a>
+        <script type="text/javascript">
+          $("a#licitacion-de").click(function () {
+            $("#tipoInformacion").attr("value", "de");
+            $("#titulo").attr("value", "Bertan behera utzitakoak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-fo">
+        <a href="#" id="licitacion-fo">Formalizatutako Kontratuak</a>
+        <script type="text/javascript">
+          $("a#licitacion-fo").click(function () {
+            $("#tipoInformacion").attr("value", "fo");
+            $("#titulo").attr("value", "Formalizatutako kontratuak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-ds">
+        <a href="#" id="licitacion-ds">Esleitu gabe</a>
+        <script type="text/javascript">
+          $("a#licitacion-ds").click(function () {
+            $("#tipoInformacion").attr("value", "ds");
+            $("#titulo").attr("value", "Esleitu gabe");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-hi">
+        <a href="#" id="licitacion-hi">Historikoa</a>
+        <script type="text/javascript">
+          $("a#licitacion-hi").click(function () {
+            $("#tipoInformacion").attr("value", "hi");
+            $("#titulo").attr("value", "Historikoa");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-mo">
+        <a href="#" id="licitacion-mo">Kontratuaren aldakuntza</a>
+        <script type="text/javascript">
+          $("a#licitacion-mo").click(function () {
+            $("#tipoInformacion").attr("value", "mo");
+            $("#titulo").attr("value", "Kontratuaren aldakuntza");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-licitacion-me">
+        <a href="#" id="licitacion-me">Kontratu txikiak</a>
+        <script type="text/javascript">
+          $("a#licitacion-me").click(function () {
+            $("#tipoInformacion").attr("value", "me");
+            $("#titulo").attr("value", "Kontratu txikiak");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+    </ul>
+
+    <!-- PROCEDIMIENTOS -->
+    <ul id="tipo_procedimientos" style="visibility: hidden">
+      <li id="li-procedimiento-ta" class="selected">
+        <a href="#" id="procedimiento-ta">Iragarki guztiak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-ta").click(function () {
+            $("#tipoInformacion").attr("value", "ta");
+            $("#titulo").attr("value", "Iragarki guztiak");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-ab">
+        <a href="#" id="procedimiento-ab">Irekitako Lizitazioak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-ab").click(function () {
+            $("#tipoInformacion").attr("value", "ab");
+            $("#titulo").attr("value", "Irekitako lizitazioak");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-re">
+        <a href="#" id="procedimiento-re">Mugatuak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-re").click(function () {
+            $("#tipoInformacion").attr("value", "re");
+            $("#titulo").attr("value", "Iragarki mugatuak");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-dc">
+        <a href="#" id="procedimiento-dc">Lehia-elkarrizketa daudenak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-dc").click(function () {
+            $("#tipoInformacion").attr("value", "dc");
+            $("#titulo").attr("value", "Lehia-elkarrizketa dauden iragarkiak");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-am">
+        <a href="#" id="procedimiento-am">Esparru-akordiokoak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-am").click(function () {
+            $("#tipoInformacion").attr("value", "am");
+            $("#titulo").attr("value", "Esparru-akordioko iragarkiak");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-sd">
+        <a href="#" id="procedimiento-sd">Kontratazio-sistema Dinamikokoak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-sd").click(function () {
+            $("#tipoInformacion").attr("value", "sd");
+            $("#titulo").attr(
+              "value",
+              "Kontratazio-sistema dinamikoko iragarkiak"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-ns">
+        <a href="#" id="procedimiento-ns"
+          >Publizitaterik Gabe Negoziatutakoak</a
+        >
+        <script type="text/javascript">
+          $("a#procedimiento-ns").click(function () {
+            $("#tipoInformacion").attr("value", "ns");
+            $("#titulo").attr(
+              "value",
+              "Publizitaterik gabe negoziatutako iragarkiak"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-nc">
+        <a href="#" id="procedimiento-nc">Publizitatearekin Negoziatutakoak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-nc").click(function () {
+            $("#tipoInformacion").attr("value", "nc");
+            $("#titulo").attr(
+              "value",
+              "Publizitatearekin Negoziatutako Iragarkiak"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-di">
+        <a href="#" id="procedimiento-di">Zuzenekoak/Kontratu Txikia</a>
+        <script type="text/javascript">
+          $("a#procedimiento-di").click(function () {
+            $("#tipoInformacion").attr("value", "di");
+            $("#titulo").attr("value", "Zuzeneko iragarkiak/Kontratu txikia");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-da">
+        <a href="#" id="procedimiento-da">Esparru-akordiotik Eratorrikoak</a>
+        <script type="text/javascript">
+          $("a#procedimiento-da").click(function () {
+            $("#tipoInformacion").attr("value", "da");
+            $("#titulo").attr(
+              "value",
+              "Esparru-akordiotik eratorriko iragarkiak"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-cp">
+        <a href="#" id="procedimiento-cp">Proiektu-lehiaketa</a>
+        <script type="text/javascript">
+          $("a#procedimiento-cp").click(function () {
+            $("#tipoInformacion").attr("value", "cp");
+            $("#titulo").attr("value", "Proiektu-lehiaketa");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-ai">
+        <a href="#" id="procedimiento-ai">Berrikuntzarako elkartea</a>
+        <script type="text/javascript">
+          $("a#procedimiento-ai").click(function () {
+            $("#tipoInformacion").attr("value", "ai");
+            $("#titulo").attr("value", "Berrikuntzarako elkartea");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-cs">
+        <a href="#" id="procedimiento-cs"
+          >Larrialdi supostuan emandako osasun laguntza prestazioari buruzko
+          kontratuak</a
+        >
+        <script type="text/javascript">
+          $("a#procedimiento-cs").click(function () {
+            $("#tipoInformacion").attr("value", "cs");
+            $("#titulo").attr(
+              "value",
+              "Larrialdi supostuan emandako osasun laguntza prestazioari buruzko kontratuak"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-as">
+        <a href="#" id="procedimiento-as">Ireki erraztua</a>
+        <script type="text/javascript">
+          $("a#procedimiento-as").click(function () {
+            $("#tipoInformacion").attr("value", "as");
+            $("#titulo").attr("value", "Ireki erraztua");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-mp">
+        <a href="#" id="procedimiento-mp"
+          >Norberaren baliobidei egindako enkarguak</a
+        >
+        <script type="text/javascript">
+          $("a#procedimiento-mp").click(function () {
+            $("#tipoInformacion").attr("value", "mp");
+            $("#titulo").attr(
+              "value",
+              "Norberaren baliobidei egindako enkarguak"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-dem">
+        <a href="#" id="procedimiento-mp"> Larrialdiko zuzena</a>
+        <script type="text/javascript">
+          $("a#procedimiento-dem").click(function () {
+            $("#tipoInformacion").attr("value", "dem");
+            $("#titulo").attr("value", "Larrialdiko prozedura zuzena");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-ass">
+        <a href="#" id="procedimiento-mp">Irekia supersinplifikatua</a>
+        <script type="text/javascript">
+          $("a#procedimiento-ass").click(function () {
+            $("#tipoInformacion").attr("value", "ass");
+            $("#titulo").attr("value", "Irekia supersinplifikatua");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-dcp">
+        <a href="#" id="procedimiento-mp">Proiektu-lehiaketatik eratorria</a>
+        <script type="text/javascript">
+          $("a#procedimiento-dcp").click(function () {
+            $("#tipoInformacion").attr("value", "dcp");
+            $("#titulo").attr("value", "Proiektu-lehiaketatik eratorria");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-dai">
+        <a href="#" id="procedimiento-dai"
+          >Berrikuntzarako asoziaziotik eratorria</a
+        >
+        <script type="text/javascript">
+          $("a#procedimiento-dai").click(function () {
+            $("#tipoInformacion").attr("value", "dai");
+            $("#titulo").attr(
+              "value",
+              "Berrikuntzarako asoziaziotik eratorria"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-esp">
+        <a href="#" id="procedimiento-esp"
+          >Espezifikoa eskuratze-sistema dinamiko batean</a
+        >
+        <script type="text/javascript">
+          $("a#procedimiento-esp").click(function () {
+            $("#tipoInformacion").attr("value", "esp");
+            $("#titulo").attr(
+              "value",
+              "Espezifikoa eskuratze-sistema dinamiko batean"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li id="li-procedimiento-ot">
+        <a href="#" id="procedimiento-ot">Beste Iragarki Batzuk</a>
+        <script type="text/javascript">
+          $("a#procedimiento-ot").click(function () {
+            $("#tipoInformacion").attr("value", "ot");
+            $("#titulo").attr("value", "Beste iragarki batzuk");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+    </ul>
+    <br />
+
+    <form method="_GET" id="opciones">
+      <input type="hidden" value="eu" id="idioma" />
+      <input type="hidden" value="6" id="poder" />
+      <input type="hidden" value="" id="entidad" />
+
+      <input type="hidden" value="" id="agrupacion" />
+      <input type="hidden" value="" id="estado" />
+      <input type="hidden" value="" id="tipoContrato" />
+      <input type="hidden" value="" id="numResult" />
+
+      <input type="hidden" value="" id="titulo" />
+
+      <input type="hidden" value="false" id="restricciones" />
+
+      <!-- Caso últimas licitaciones -->
+
+      <input type="hidden" value="al" id="tipoInformacion" />
+
+      <div style="display: none">
+        <input
+          type="button"
+          id="actualizar"
+          name="actualizar"
+          value="actualizar"
+          style="visibility: hidden"
+        />
+        <input
+          type="button"
+          id="probar"
+          name="probar"
+          value="probar"
+          style="visibility: hidden"
+        />
+      </div>
+    </form>
+    <div id="jswidget" class="widget"></div>
+    <script>
+      $(document).ready(function () {
+        $("a#licitacion-al").click();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="udala.kontratatzailearenprofila"
+    >
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page
+      name="view"
+      for="..content.contractors_profile.IContractorsProfile"
+      class=".contractors_profile_view.ContractorsProfileView"
+      template="contractors_profile_view.pt"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IUdalaKontratatzailearenprofilaLayer"
+      />
+
+</configure>
