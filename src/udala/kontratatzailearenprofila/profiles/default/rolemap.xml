@@ -2,5 +2,13 @@
 <rolemap>
   <permissions>
     <!-- -*- extra stuff goes here -*- -->
+
+    <permission name="udala.kontratatzailearenprofila: Add ContractorsProfile" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
   </permissions>
 </rolemap>
