@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="es"
+      xml:lang="es"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/ac70cEstilos.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/jquery.dataTables.1.9.0.css?"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/jquery.dataTables.themeroller.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/jquery-3.6.0.min.js"
+            type="text/javascript"
+    ></script>
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/jquery.dataTables.1.9.0.min.js"
+            type="text/javascript"
+    ></script>
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/ac70cConfigurador.js?"
+            type="text/javascript"
+    ></script>
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/ac70cFecha.js"
+            type="text/javascript"
+    ></script>
+    <link href="${context/absolute_url}/custom.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <body>
+      <div id="loading-overlay"></div>
+
+      <!-- ESTADOS -->
+      <ul id="tipo_licitaciones"
+          style="visibility: hidden"
+      >
+        <li class="selected"
+            id="li-licitacion-ta"
+        >
+          <a id="licitacion-ta"
+             href="#"
+          >Todos los anuncios</a>
+          <script type="text/javascript">
+          $("a#licitacion-ta").click(function () {
+            $("#tipoInformacion").attr("value", "ta");
+            $("#titulo").attr("value", "Todos los anuncios");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-ap">
+          <a id="licitacion-ap"
+             href="#"
+          >Anuncios previos</a>
+          <script type="text/javascript">
+          $("a#licitacion-ap").click(function () {
+            $("#tipoInformacion").attr("value", "ap");
+            $("#titulo").attr("value", "Anuncios previos");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-cpm">
+          <a id="licitacion-cpm"
+             href="#"
+          >Consulta Preliminar de Mercado</a>
+          <script type="text/javascript">
+          $("a#licitacion-cpm").click(function () {
+            $("#tipoInformacion").attr("value", "cpm");
+            $("#titulo").attr("value", "Consulta preliminar de mercado");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-pac">
+          <a id="licitacion-pac"
+             href="#"
+          >Plan Anual de Contrataci&oacute;n</a>
+          <script type="text/javascript">
+          $("a#licitacion-pac").click(function () {
+            $("#tipoInformacion").attr("value", "pac");
+            $("#titulo").attr("value", "Plan Anual de Contratación");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-al">
+          <a id="licitacion-al"
+             href="#"
+          >Anuncios Abiertos</a>
+          <script type="text/javascript">
+          $("a#licitacion-al").click(function () {
+            $("#tipoInformacion").attr("value", "al");
+            $("#titulo").attr("value", "Anuncios abiertos");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-ac">
+          <a id="licitacion-ac"
+             href="#"
+          >Anuncios en Estudio</a>
+          <script type="text/javascript">
+          $("a#licitacion-ac").click(function () {
+            $("#tipoInformacion").attr("value", "ac");
+            $("#titulo").attr("value", "Anuncios en estudio");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-an">
+          <a id="licitacion-an"
+             href="#"
+          >Anuncios Anulados</a>
+          <script type="text/javascript">
+          $("a#licitacion-an").click(function () {
+            $("#tipoInformacion").attr("value", "an");
+            $("#titulo").attr("value", "Anuncios anulados");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-ad">
+          <a id="licitacion-ad"
+             href="#"
+          >Adjudicaciones</a>
+          <script type="text/javascript">
+          $("a#licitacion-ad").click(function () {
+            $("#tipoInformacion").attr("value", "ad");
+            $("#titulo").attr("value", "Adjudicaciones");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-de">
+          <a id="licitacion-de"
+             href="#"
+          >Desistimientos</a>
+          <script type="text/javascript">
+          $("a#licitacion-de").click(function () {
+            $("#tipoInformacion").attr("value", "de");
+            $("#titulo").attr("value", "Desistimientos");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-fo">
+          <a id="licitacion-fo"
+             href="#"
+          >Formalizaciones de Contrato</a>
+          <script type="text/javascript">
+          $("a#licitacion-fo").click(function () {
+            $("#tipoInformacion").attr("value", "fo");
+            $("#titulo").attr("value", "Formalizaciones de Contrato");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-ds">
+          <a id="licitacion-ds"
+             href="#"
+          >Desierto</a>
+          <script type="text/javascript">
+          $("a#licitacion-ds").click(function () {
+            $("#tipoInformacion").attr("value", "ds");
+            $("#titulo").attr("value", "Desierto");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-hi">
+          <a id="licitacion-hi"
+             href="#"
+          >Hist&oacute;rico</a>
+          <script type="text/javascript">
+          $("a#licitacion-hi").click(function () {
+            $("#tipoInformacion").attr("value", "hi");
+            $("#titulo").attr("value", "Histórico");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-mo">
+          <a id="licitacion-mo"
+             href="#"
+          >Modificaci&oacute;n del Contrato</a>
+          <script type="text/javascript">
+          $("a#licitacion-mo").click(function () {
+            $("#tipoInformacion").attr("value", "mo");
+            $("#titulo").attr("value", "Modificación del Contrato");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-licitacion-me">
+          <a id="licitacion-me"
+             href="#"
+          >Contratos menores</a>
+          <script type="text/javascript">
+          $("a#licitacion-me").click(function () {
+            $("#tipoInformacion").attr("value", "me");
+            $("#titulo").attr("value", "Contratos Menores");
+            $("#tipo_licitaciones li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+      </ul>
+
+      <!-- PROCEDIMIENTOS -->
+      <ul id="tipo_procedimientos"
+          style="visibility: hidden"
+      >
+        <li class="selected"
+            id="li-procedimiento-ta"
+        >
+          <a id="procedimiento-ta"
+             href="#"
+          >Todos los anuncios</a>
+          <script type="text/javascript">
+          $("a#procedimiento-ta").click(function () {
+            $("#tipoInformacion").attr("value", "ta");
+            $("#titulo").attr("value", "Todos los anuncios");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-ab">
+          <a id="procedimiento-ab"
+             href="#"
+          >Abiertos</a>
+          <script type="text/javascript">
+          $("a#procedimiento-ab").click(function () {
+            $("#tipoInformacion").attr("value", "ab");
+            $("#titulo").attr("value", "Anuncios abiertos");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-re">
+          <a id="procedimiento-re"
+             href="#"
+          >Restringidos</a>
+          <script type="text/javascript">
+          $("a#procedimiento-re").click(function () {
+            $("#tipoInformacion").attr("value", "re");
+            $("#titulo").attr("value", "Anuncios restringidos");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-dc">
+          <a id="procedimiento-dc"
+             href="#"
+          >Di&aacute;logo Competitivo</a>
+          <script type="text/javascript">
+          $("a#procedimiento-dc").click(function () {
+            $("#tipoInformacion").attr("value", "dc");
+            $("#titulo").attr("value", "Anuncios de diálogo competitivo");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-am">
+          <a id="procedimiento-am"
+             href="#"
+          >Acuerdo Marco</a>
+          <script type="text/javascript">
+          $("a#procedimiento-am").click(function () {
+            $("#tipoInformacion").attr("value", "am");
+            $("#titulo").attr("value", "Anuncios de acuerdo marco");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-sd">
+          <a id="procedimiento-sd"
+             href="#"
+          >Sistema Din&aacute;mico de Contrataci&oacute;n</a>
+          <script type="text/javascript">
+          $("a#procedimiento-sd").click(function () {
+            $("#tipoInformacion").attr("value", "sd");
+            $("#titulo").attr(
+              "value",
+              "Anuncios de sistema dinámico de contratación"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-ns">
+          <a id="procedimiento-ns"
+             href="#"
+          >Negociados sin publicidad</a>
+          <script type="text/javascript">
+          $("a#procedimiento-ns").click(function () {
+            $("#tipoInformacion").attr("value", "ns");
+            $("#titulo").attr("value", "Anuncios negociados sin publicidad");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-nc">
+          <a id="procedimiento-nc"
+             href="#"
+          >Negociados con publicidad</a>
+          <script type="text/javascript">
+          $("a#procedimiento-nc").click(function () {
+            $("#tipoInformacion").attr("value", "nc");
+            $("#titulo").attr("value", "Anuncios negociados con publicidad");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-di">
+          <a id="procedimiento-di"
+             href="#"
+          >Directos/Contrato Menor</a>
+          <script type="text/javascript">
+          $("a#procedimiento-di").click(function () {
+            $("#tipoInformacion").attr("value", "di");
+            $("#titulo").attr("value", "Anuncios directos/contrato menor");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-da">
+          <a id="procedimiento-da"
+             href="#"
+          >Derivados de Acuerdo Marco</a>
+          <script type="text/javascript">
+          $("a#procedimiento-da").click(function () {
+            $("#tipoInformacion").attr("value", "da");
+            $("#titulo").attr("value", "Anuncios derivados de acuerdo marco");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-cp">
+          <a id="procedimiento-cp"
+             href="#"
+          >Concurso de Proyectos</a>
+          <script type="text/javascript">
+          $("a#procedimiento-cp").click(function () {
+            $("#tipoInformacion").attr("value", "cp");
+            $("#titulo").attr("value", "Concurso de Proyectos");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-ai">
+          <a id="procedimiento-ai"
+             href="#"
+          >Asociaci&oacute;n para la Innovaci&oacute;n</a>
+          <script type="text/javascript">
+          $("a#procedimiento-ai").click(function () {
+            $("#tipoInformacion").attr("value", "ai");
+            $("#titulo").attr("value", "Asociación para la Innovación");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-cs">
+          <a id="procedimiento-cs"
+             href="#"
+          >Contratos relativos a la prestaci&oacute;n de asistencia sanitaria en
+            supuestos de urgencia</a>
+          <script type="text/javascript">
+          $("a#procedimiento-cs").click(function () {
+            $("#tipoInformacion").attr("value", "cs");
+            $("#titulo").attr(
+              "value",
+              "Contratos relativos a la prestación de asistencia sanitaria en supuestos de urgencia"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-as">
+          <a id="procedimiento-as"
+             href="#"
+          >Abierto Simplificado</a>
+          <script type="text/javascript">
+          $("a#procedimiento-as").click(function () {
+            $("#tipoInformacion").attr("value", "as");
+            $("#titulo").attr("value", "Abierto Simplificado");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-mp">
+          <a id="procedimiento-mp"
+             href="#"
+          >Encargos a medios propios</a>
+          <script type="text/javascript">
+          $("a#procedimiento-mp").click(function () {
+            $("#tipoInformacion").attr("value", "mp");
+            $("#titulo").attr("value", "Encargos a medios propios");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-dem">
+          <a id="procedimiento-dem"
+             href="#"
+          >Directo Emergencia</a>
+          <script type="text/javascript">
+          $("a#procedimiento-dem").click(function () {
+            $("#tipoInformacion").attr("value", "dem");
+            $("#titulo").attr("value", "Directo Emergencia");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-ass">
+          <a id="procedimiento-ass"
+             href="#"
+          >Abierto supersimplificado</a>
+          <script type="text/javascript">
+          $("a#procedimiento-ass").click(function () {
+            $("#tipoInformacion").attr("value", "ass");
+            $("#titulo").attr("value", "Abierto supersimplificado");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-dcp">
+          <a id="procedimiento-dcp"
+             href="#"
+          >Derivado de Concurso de Proyectos</a>
+          <script type="text/javascript">
+          $("a#procedimiento-dcp").click(function () {
+            $("#tipoInformacion").attr("value", "dcp");
+            $("#titulo").attr("value", "Derivado de Concurso de Proyectos");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-dai">
+          <a id="procedimiento-dai"
+             href="#"
+          >Derivado de asociaci&oacute;n para la innovaci&oacute;n</a>
+          <script type="text/javascript">
+          $("a#procedimiento-dai").click(function () {
+            $("#tipoInformacion").attr("value", "dai");
+            $("#titulo").attr(
+              "value",
+              "Derivado de asociación para la innovación"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-esp">
+          <a id="procedimiento-esp"
+             href="#"
+          >Espec&iacute;fico en un sistema din&aacute;mico de adquisici&oacute;n</a>
+          <script type="text/javascript">
+          $("a#procedimiento-esp").click(function () {
+            $("#tipoInformacion").attr("value", "esp");
+            $("#titulo").attr(
+              "value",
+              "Derivado de asociación para la innovación"
+            );
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+        <li id="li-procedimiento-ot">
+          <a id="procedimiento-ot"
+             href="#"
+          >Otros Anuncios</a>
+          <script type="text/javascript">
+          $("a#procedimiento-ot").click(function () {
+            $("#tipoInformacion").attr("value", "ot");
+            $("#titulo").attr("value", "Otros anuncios");
+            $("#tipo_procedimientos li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+          </script>
+        </li>
+      </ul>
+
+      <br />
+
+      <form id="opciones"
+            method="_GET"
+      >
+        <input id="idioma"
+               type="hidden"
+               value="es"
+        />
+        <input id="poder"
+               type="hidden"
+               value="${context/code}"
+        />
+        <input id="entidad"
+               type="hidden"
+               value=""
+        />
+
+        <input id="agrupacion"
+               type="hidden"
+               value=""
+        />
+        <input id="estado"
+               type="hidden"
+               value=""
+        />
+        <input id="tipoContrato"
+               type="hidden"
+               value=""
+        />
+        <input id="numResult"
+               type="hidden"
+               value=""
+        />
+
+        <input id="titulo"
+               type="hidden"
+               value=""
+        />
+
+        <input id="restricciones"
+               type="hidden"
+               value="false"
+        />
+
+        <!-- Caso últimas licitaciones -->
+
+        <input id="tipoInformacion"
+               type="hidden"
+               value="al"
+        />
+
+        <div style="display: none">
+          <input id="actualizar"
+                 name="actualizar"
+                 style="visibility: hidden"
+                 type="button"
+                 value="actualizar"
+          />
+          <input id="probar"
+                 name="probar"
+                 style="visibility: hidden"
+                 type="button"
+                 value="probar"
+          />
+        </div>
+      </form>
+      <div class="widget"
+           id="jswidget"
+      ></div>
+      <script>
+      $(document).ready(function () {
+        $("a#licitacion-al").click();
+      });
+      </script>
+    </body>
+  </head></html>

@@ -6,7 +6,8 @@ from zope.interface import implementer
 from zope.interface import Interface
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
+from Products.CMFPlone.utils import get_installer
+from plone import api
 class IContractorsProfileView(Interface):
     """ Marker Interface for IContractorsProfileView"""
 
@@ -20,3 +21,12 @@ class ContractorsProfileView(BrowserView):
     def __call__(self):
         # Implement your own actions:
         return self.index()
+
+
+    def language(self):
+        portal = api.portal.get()
+        installer = get_installer(portal, self.request)
+        if installer.is_product_installed('plone.app.multilingual'):
+            return ""
+
+        return api.portal.get_current_language()

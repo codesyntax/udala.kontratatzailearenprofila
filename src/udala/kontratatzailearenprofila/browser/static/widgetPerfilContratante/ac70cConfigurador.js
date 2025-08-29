@@ -13,28 +13,28 @@ C = {
 		C.coger_variables_URL();
 		document.getElementById('probar').style.visibility = 'hidden';
 		document.getElementById('actualizar').style.visibility = 'hidden';
-		
+
 		removeEvent(document.getElementById('actualizar'), 'click', C.disparar);
 		addEvent(document.getElementById('actualizar'), 'click', C.disparar);
 
-		//cargamos el widget y rellenamos el text del código
+		//cargamos el widget y rellenamos el text del cï¿½digo
 		C.carga_widget();
-		
+
 		C.cargar_variables_inicio();
 		C.genera_codigo_variables(C.txt_codigo_variables);
-		
+
 		eval ('C.variables = '+C.txt_codigo_variables);
-		
+
 		for (var k in C.variables) { if (C.variables_defecto[k]) { C.variables_defecto[k] = C.variables[k]; } }
-	
+
 	},
-	
-	
+
+
 	cambiar_idioma: function() {
 		C.variables['idioma'] = document.getElementById('idioma').value;
 		C.actualizar_configurador(true);
 	},
-	
+
 	cambiar_poder: function() {
 		C.variables['poder'] = document.getElementById('poder').value;
 		C.actualizar_configurador(true);
@@ -47,13 +47,13 @@ C = {
 		C.variables['tipoInformacion'] = document.getElementById('tipoInformacion').value;
 		C.actualizar_configurador(true);
 	},
-	
-	
-	
+
+
+
 	actualizar_configurador: function(bl_carga_widget) {
 		C.genera_codigo_variables(C.variables);
 		if (bl_carga_widget) {C.carga_widget()};
-		
+
 	},
 	genera_codigo_variables: function(obj_variables) {
 		C.txt_codigo_variables = '{\n';
@@ -65,29 +65,29 @@ C = {
 		C.txt_codigo_variables += '\n}\n';
 	},
 	genera_codigo_final: function() {
-		C.txt_codigo_final = '<script src="/ac70cExpedientes.js" type="text/javascript">\n';
+		C.txt_codigo_final = '<script src="++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/ac70cExpedientes.js" type="text/javascript">\n';
 		C.txt_codigo_final += C.txt_codigo_variables;
 		C.txt_codigo_final += '</script>\n';
 	},
-	
+
 	carga_widget: function() {
-		
-		
+
+
 		if(document.getElementById('jswidget').childNodes[0] != undefined){
 			document.getElementById('jswidget').removeChild(document.getElementById('jswidget').childNodes[0]);
 		}
-		
-		
+
+
 		var j = document.createElement("script");
 		j.type = "text/javascript";
-		j.src = 'ac70cExpedientes.js';
+		j.src = '++plone++udala.kontratatzailearenprofila/widgetPerfilContratante/ac70cExpedientes.js';
 		j.text = C.txt_codigo_variables;
-		
+
 		document.getElementById('jswidget').appendChild(j);
-	
-		
+
+
 	},
-	
+
 	coger_variables_URL: function () {
 		var Url = location.href;
 		Url = Url.replace(/.*\?(.*?)/,"$1");
@@ -113,14 +113,14 @@ C = {
 		document.getElementById('probar').click();
 	},
 	cargar_variables_defecto : function() {
-		
+
 		C.variables_defecto = {
-			
+
 			"idioma" : document.getElementById('idioma').value,
 			"titulo" : document.getElementById('titulo').value,
 			"poder" : document.getElementById('poder').value,
 			"tipoInformacion" : document.getElementById('tipoInformacion').value
-			
+
 		};
 	},
 	cargar_variables_inicio : function() {
@@ -133,7 +133,7 @@ C = {
 	}
 }
 
-			
+
 
 function removeEvent(obj, evType, fn){
  if (obj.removeEventListener){

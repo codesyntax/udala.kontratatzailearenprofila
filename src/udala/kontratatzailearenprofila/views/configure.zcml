@@ -13,7 +13,25 @@
       class=".contractors_profile_view.ContractorsProfileView"
       template="contractors_profile_view.pt"
       permission="zope2.View"
-      layer="udala.kontratatzailearenprofila.interfaces.IUdalaKontratatzailearenprofilaLayer"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
       />
+
+
+  <browser:page
+      name="iframe-view"
+      for="..content.contractors_profile.IContractorsProfile"
+      class=".contractors_profile_iframe_view.ContractorsProfileIframeView"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="custom.css"
+      for="..content.contractors_profile.IContractorsProfile"
+      class=".contractors_profile_custom_css_view.ContractorsProfileCustomCSSView"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
+
 
 </configure>
