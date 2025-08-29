@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="udala.kontratatzailearenprofila.AddAlertSubscription"
+        title="udala.kontratatzailearenprofila: Add AlertSubscription"
+    />
+
+
+    <permission
         id="udala.kontratatzailearenprofila.AddContractorsProfile"
         title="udala.kontratatzailearenprofila: Add ContractorsProfile"
     />

@@ -6,4 +6,5 @@
   />
 -->
   <object name="ContractorsProfile" meta_type="Dexterity FTI"/>
+  <object name="AlertSubscription" meta_type="Dexterity FTI"/>
 </object>
