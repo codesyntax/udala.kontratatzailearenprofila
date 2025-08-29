@@ -1,80 +1,79 @@
-#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-#SOME DESCRIPTIVE TITLE.
-#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2025-08-29 08:34+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2025-08-29 10:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: udala.kontratatzailearenprofila\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: udala/kontratatzailearenprofila/profiles/default/types/AlertSubscription.xml
 msgid "AlertSubscription"
-msgstr ""
+msgstr "Suscripción a alertas"
 
 #: udala/kontratatzailearenprofila/content/alert_subscription.py:20
 #: udala/kontratatzailearenprofila/content/contract_registry.py:20
 #: udala/kontratatzailearenprofila/content/contractors_profile.py:20
 msgid "Code for this administration"
-msgstr ""
+msgstr "Código de esta administración pública"
 
 #: udala/kontratatzailearenprofila/profiles/default/types/ContractRegistry.xml
 msgid "ContractRegistry"
-msgstr ""
+msgstr "Registro de contratos"
 
 #: udala/kontratatzailearenprofila/profiles/default/types/ContractorsProfile.xml
 msgid "ContractorsProfile"
-msgstr ""
+msgstr "Perfil de contratante"
 
 #: udala/kontratatzailearenprofila/content/alert_subscription.py:32
 #: udala/kontratatzailearenprofila/content/contract_registry.py:32
 #: udala/kontratatzailearenprofila/content/contractors_profile.py:32
 msgid "Custom CSS"
-msgstr ""
+msgstr "CSS personalizado"
 
 #: udala/kontratatzailearenprofila/profiles/default/types/AlertSubscription.xml
 msgid "Form to subscribe to contractors' profile alerts"
-msgstr ""
+msgstr "Formulario para suscribirse a alertas del perfil de contrante"
 
 #: udala/kontratatzailearenprofila/profiles.zcml:13
 msgid "Package to configure a new udala.kontratatzailearenprofila site"
-msgstr ""
+msgstr "Paquete para configurar udala.kontratatzailearen profila"
 
 #: udala/kontratatzailearenprofila/content/contractors_profile.py:35
 msgid "This CSS fill be loaded in the widget. You can use the following CSS variables to style the widget: --contracts-primary-color, --contracts-font-family, --contracts-body-color, --contracts-tabs-background-color. You can also add any other CSS rules you want"
-msgstr ""
+msgstr "Este CSS se cargará en la página. Puede utilizar las siguientes variables de CSS para modificar su estilo básico: --contracts-primary-color, --contracts-font-family, --contracts-body-color, --contracts-tabs-background-color. También puede incluir cualquier otro CSS que necesite."
 
 #: udala/kontratatzailearenprofila/content/contract_registry.py:35
 msgid "This CSS fill be loaded in the widget. You can use the following CSS variables to style the widget: --contracts-primary-color, --contracts-font-family, --contracts-body-color, --contracts-tabs-background-colorYou can also add any other CSS rules you want"
-msgstr ""
+msgstr "Este CSS se cargará en la página. Puede utilizar las siguientes variables de CSS para modificar su estilo básico: --contracts-primary-color, --contracts-font-family, --contracts-body-color, --contracts-tabs-background-color. También puede incluir cualquier otro CSS que necesite."
 
 #: udala/kontratatzailearenprofila/content/alert_subscription.py:35
 msgid "This CSS fill be loaded in the widget. You can use the following CSS variables to style the widget: --subscription-button-color, --subscription-button-hover-color, --subscription-font-family, --subscription-body-color, --subscription-legend-background-color You can also add any other CSS rules you want"
-msgstr ""
+msgstr "Este CSS se cargará en la página. Puede utilizar las siguientes variables de CSS para modificar su estilo básico: --subscription-button-color, --subscription-button-hover-color, --subscription-font-family, --subscription-body-color, --subscription-legend-background-color. También puede incluir cualquier otro CSS que necesite."
 
 #: udala/kontratatzailearenprofila/profiles.zcml:21
 msgid "Uninstall udala.kontratatzailearenprofila setup."
-msgstr ""
+msgstr "Desinstalar udala.kontratatzailearenprofila"
 
 #: udala/kontratatzailearenprofila/content/alert_subscription.py:23
 #: udala/kontratatzailearenprofila/content/contract_registry.py:23
 #: udala/kontratatzailearenprofila/content/contractors_profile.py:23
 msgid "You need to ask this code to the Basque Government"
-msgstr ""
+msgstr "Tiene que pedir este código al Gobierno Vasco"
 
 #: udala/kontratatzailearenprofila/profiles.zcml:13
 msgid "udala.kontratatzailearenprofila: Install"
-msgstr ""
+msgstr "udala.kontratatzailearenprofila: instalar"
 
 #: udala/kontratatzailearenprofila/profiles.zcml:21
 msgid "udala.kontratatzailearenprofila: Uninstall"
-msgstr ""
+msgstr "udala.kontratatzailearenprofila: desinstalar"

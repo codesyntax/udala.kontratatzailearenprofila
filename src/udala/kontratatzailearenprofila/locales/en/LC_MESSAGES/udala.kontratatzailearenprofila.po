@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-25 17:12+0000\n"
+"POT-Creation-Date: 2025-08-29 08:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,3 +13,65 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: udala.kontratatzailearenprofila\n"
+
+#: udala/kontratatzailearenprofila/profiles/default/types/AlertSubscription.xml
+msgid "AlertSubscription"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/content/alert_subscription.py:20
+#: udala/kontratatzailearenprofila/content/contract_registry.py:20
+#: udala/kontratatzailearenprofila/content/contractors_profile.py:20
+msgid "Code for this administration"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/profiles/default/types/ContractRegistry.xml
+msgid "ContractRegistry"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/profiles/default/types/ContractorsProfile.xml
+msgid "ContractorsProfile"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/content/alert_subscription.py:32
+#: udala/kontratatzailearenprofila/content/contract_registry.py:32
+#: udala/kontratatzailearenprofila/content/contractors_profile.py:32
+msgid "Custom CSS"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/profiles/default/types/AlertSubscription.xml
+msgid "Form to subscribe to contractors' profile alerts"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/profiles.zcml:13
+msgid "Package to configure a new udala.kontratatzailearenprofila site"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/content/contractors_profile.py:35
+msgid "This CSS fill be loaded in the widget. You can use the following CSS variables to style the widget: --contracts-primary-color, --contracts-font-family, --contracts-body-color, --contracts-tabs-background-color. You can also add any other CSS rules you want"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/content/contract_registry.py:35
+msgid "This CSS fill be loaded in the widget. You can use the following CSS variables to style the widget: --contracts-primary-color, --contracts-font-family, --contracts-body-color, --contracts-tabs-background-colorYou can also add any other CSS rules you want"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/content/alert_subscription.py:35
+msgid "This CSS fill be loaded in the widget. You can use the following CSS variables to style the widget: --subscription-button-color, --subscription-button-hover-color, --subscription-font-family, --subscription-body-color, --subscription-legend-background-color You can also add any other CSS rules you want"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/profiles.zcml:21
+msgid "Uninstall udala.kontratatzailearenprofila setup."
+msgstr ""
+
+#: udala/kontratatzailearenprofila/content/alert_subscription.py:23
+#: udala/kontratatzailearenprofila/content/contract_registry.py:23
+#: udala/kontratatzailearenprofila/content/contractors_profile.py:23
+msgid "You need to ask this code to the Basque Government"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/profiles.zcml:13
+msgid "udala.kontratatzailearenprofila: Install"
+msgstr ""
+
+#: udala/kontratatzailearenprofila/profiles.zcml:21
+msgid "udala.kontratatzailearenprofila: Uninstall"
+msgstr ""
