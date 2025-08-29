@@ -1,29 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eu" lang="eu">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="eu"
+      xml:lang="eu"
+>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="ac70cEstilos.css" />
-    <link rel="stylesheet" type="text/css" href="jquery.dataTables.1.9.0.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="jquery.dataTables.themeroller.css"
+    <link href="ac70cEstilos.css"
+          rel="stylesheet"
+          type="text/css"
     />
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-    <script
-      src="jquery.dataTables.1.9.0.min.js"
-      type="text/javascript"
+    <link href="jquery.dataTables.1.9.0.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="jquery.dataTables.themeroller.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <script src="jquery-3.6.0.min.js"
+            type="text/javascript"
     ></script>
-    <script src="ac70cConfigurador.js" type="text/javascript"></script>
-    <script src="ac70cFecha.js" type="text/javascript"></script>
+    <script src="jquery.dataTables.1.9.0.min.js"
+            type="text/javascript"
+    ></script>
+    <script src="ac70cConfigurador.js"
+            type="text/javascript"
+    ></script>
+    <script src="ac70cFecha.js"
+            type="text/javascript"
+    ></script>
   </head>
   <body>
     <div id="loading-overlay"></div>
 
     <!-- ESTADOS -->
-    <ul id="agruEstado" style="visibility: hidden">
+    <ul id="agruEstado"
+        style="visibility: hidden"
+    >
       <li class="selected">
-        <a href="#" id="estado-tc">Kontratu guztiak</a>
+        <a id="estado-tc"
+           href="#"
+        >Kontratu guztiak</a>
         <script type="text/javascript">
           $("a#estado-tc").click(function () {
             $("#estado").attr("value", "");
@@ -37,7 +54,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="estado-ce">Egiten ari direnak</a>
+        <a id="estado-ce"
+           href="#"
+        >Egiten ari direnak</a>
         <script type="text/javascript">
           $("a#estado-ce").click(function () {
             $("#estado").attr("value", "4");
@@ -51,7 +70,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="estado-cf">Bukatuak</a>
+        <a id="estado-cf"
+           href="#"
+        >Bukatuak</a>
         <script type="text/javascript">
           $("a#estado-cf").click(function () {
             $("#estado").attr("value", "5");
@@ -66,7 +87,9 @@
       </li>
 
       <li>
-        <a href="#" id="estado-cm">Kontratu txikiak</a>
+        <a id="estado-cm"
+           href="#"
+        >Kontratu txikiak</a>
         <script type="text/javascript">
           $("a#estado-cm").click(function () {
             $("#contratosMenores").attr("value", "TRUE");
@@ -82,9 +105,13 @@
       </li>
     </ul>
 
-    <ul id="agruTipoContrato" style="visibility: hidden">
+    <ul id="agruTipoContrato"
+        style="visibility: hidden"
+    >
       <li class="selected">
-        <a href="#" id="tipoContrato-tc">Kontratu guztiak</a>
+        <a id="tipoContrato-tc"
+           href="#"
+        >Kontratu guztiak</a>
         <script type="text/javascript">
           $("a#tipoContrato-tc").click(function () {
             $("#tipoContrato").attr("value", "");
@@ -99,7 +126,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-o">Obrak</a>
+        <a id="tipoContrato-o"
+           href="#"
+        >Obrak</a>
         <script type="text/javascript">
           $("a#tipoContrato-o").click(function () {
             $("#tipoContrato").attr("value", "1");
@@ -114,7 +143,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-se">Zerbitzuak</a>
+        <a id="tipoContrato-se"
+           href="#"
+        >Zerbitzuak</a>
         <script type="text/javascript">
           $("a#tipoContrato-se").click(function () {
             $("#tipoContrato").attr("value", "2");
@@ -129,7 +160,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-su">Hornigaiak</a>
+        <a id="tipoContrato-su"
+           href="#"
+        >Hornigaiak</a>
         <script type="text/javascript">
           $("a#tipoContrato-su").click(function () {
             $("#tipoContrato").attr("value", "3");
@@ -144,7 +177,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-ae">Administratibo bereziak</a>
+        <a id="tipoContrato-ae"
+           href="#"
+        >Administratibo bereziak</a>
         <script type="text/javascript">
           $("a#tipoContrato-ae").click(function () {
             $("#tipoContrato").attr("value", "4");
@@ -159,7 +194,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-cop">Obra publikoaren kontzesioa</a>
+        <a id="tipoContrato-cop"
+           href="#"
+        >Obra publikoaren kontzesioa</a>
         <script type="text/javascript">
           $("a#tipoContrato-cop").click(function () {
             $("#tipoContrato").attr("value", "5");
@@ -177,7 +214,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-gsp">Zerbitzu publikoen kudeaketa</a>
+        <a id="tipoContrato-gsp"
+           href="#"
+        >Zerbitzu publikoen kudeaketa</a>
         <script type="text/javascript">
           $("a#tipoContrato-gsp").click(function () {
             $("#tipoContrato").attr("value", "6");
@@ -195,9 +234,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-cspsp"
-          >Sektore publikoaren eta pribatuaren arteko kolaborazioa</a
-        >
+        <a id="tipoContrato-cspsp"
+           href="#"
+        >Sektore publikoaren eta pribatuaren arteko kolaborazioa</a>
         <script type="text/javascript">
           $("a#tipoContrato-cspsp").click(function () {
             $("#tipoContrato").attr("value", "7");
@@ -215,7 +254,9 @@
         </script>
       </li>
       <li>
-        <a href="#" id="tipoContrato-p">Pribatuak</a>
+        <a id="tipoContrato-p"
+           href="#"
+        >Pribatuak</a>
         <script type="text/javascript">
           $("a#tipoContrato-p").click(function () {
             $("#tipoContrato").attr("value", "1041");
@@ -231,7 +272,9 @@
       </li>
 
       <li>
-        <a href="#" id="tipoContrato-cm">Kontratu txikiak</a>
+        <a id="tipoContrato-cm"
+           href="#"
+        >Kontratu txikiak</a>
         <script type="text/javascript">
           $("a#tipoContrato-cm").click(function () {
             $("#tipoContrato").attr("value", "");
@@ -249,35 +292,64 @@
 
     <br />
 
-    <form method="_GET" id="opciones">
-      <input type="hidden" value="eu" id="idioma" />
-      <input type="hidden" value="6" id="poder" />
-      <input type="hidden" value="" id="agrupacion" />
-      <input type="hidden" value="" id="estado" />
-      <input type="hidden" value="" id="tipoContrato" />
-      <input type="hidden" value="" id="contratosMenores" />
-      <input type="hidden" value="" id="numResult" />
-      <input type="hidden" value="" id="entidad" />
-      <input type="hidden" value="" id="titulo" />
+    <form id="opciones"
+          method="_GET"
+    >
+      <input id="idioma"
+             type="hidden"
+             value="eu"
+      />
+      <input id="poder"
+             type="hidden"
+             value="6"
+      />
+      <input id="agrupacion"
+             type="hidden"
+             value=""
+      />
+      <input id="estado"
+             type="hidden"
+             value=""
+      />
+      <input id="tipoContrato"
+             type="hidden"
+             value=""
+      />
+      <input id="contratosMenores"
+             type="hidden"
+             value=""
+      />
+      <input id="numResult"
+             type="hidden"
+             value=""
+      />
+      <input id="entidad"
+             type="hidden"
+             value=""
+      />
+      <input id="titulo"
+             type="hidden"
+             value=""
+      />
 
       <div style="display: none">
-        <input
-          type="button"
-          id="actualizar"
-          name="actualizar"
-          value="actualizar"
-          style="visibility: hidden"
+        <input id="actualizar"
+               name="actualizar"
+               style="visibility: hidden"
+               type="button"
+               value="actualizar"
         />
-        <input
-          type="button"
-          id="probar"
-          name="probar"
-          value="probar"
-          style="visibility: hidden"
+        <input id="probar"
+               name="probar"
+               style="visibility: hidden"
+               type="button"
+               value="probar"
         />
       </div>
     </form>
 
-    <div id="jswidget" class="widget"></div>
+    <div class="widget"
+         id="jswidget"
+    ></div>
   </body>
 </html>

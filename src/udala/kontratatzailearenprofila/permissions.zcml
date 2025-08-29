@@ -6,22 +6,22 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
-    <permission
-        id="udala.kontratatzailearenprofila.AddContractRegistry"
-        title="udala.kontratatzailearenprofila: Add ContractRegistry"
-    />
+  <permission
+      id="udala.kontratatzailearenprofila.AddContractRegistry"
+      title="udala.kontratatzailearenprofila: Add ContractRegistry"
+      />
 
 
-    <permission
-        id="udala.kontratatzailearenprofila.AddAlertSubscription"
-        title="udala.kontratatzailearenprofila: Add AlertSubscription"
-    />
+  <permission
+      id="udala.kontratatzailearenprofila.AddAlertSubscription"
+      title="udala.kontratatzailearenprofila: Add AlertSubscription"
+      />
 
 
-    <permission
-        id="udala.kontratatzailearenprofila.AddContractorsProfile"
-        title="udala.kontratatzailearenprofila: Add ContractorsProfile"
-    />
+  <permission
+      id="udala.kontratatzailearenprofila.AddContractorsProfile"
+      title="udala.kontratatzailearenprofila: Add ContractorsProfile"
+      />
 
 
 </configure>

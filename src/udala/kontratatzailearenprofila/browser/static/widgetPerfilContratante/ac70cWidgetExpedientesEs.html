@@ -1,29 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="es"
+      xml:lang="es"
+>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="ac70cEstilos.css" />
-    <link rel="stylesheet" type="text/css" href="jquery.dataTables.1.9.0.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="jquery.dataTables.themeroller.css"
+    <link href="ac70cEstilos.css"
+          rel="stylesheet"
+          type="text/css"
     />
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-    <script
-      src="jquery.dataTables.1.9.0.min.js"
-      type="text/javascript"
+    <link href="jquery.dataTables.1.9.0.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <link href="jquery.dataTables.themeroller.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <script src="jquery-3.6.0.min.js"
+            type="text/javascript"
     ></script>
-    <script src="ac70cConfigurador.js" type="text/javascript"></script>
-    <script src="ac70cFecha.js" type="text/javascript"></script>
+    <script src="jquery.dataTables.1.9.0.min.js"
+            type="text/javascript"
+    ></script>
+    <script src="ac70cConfigurador.js"
+            type="text/javascript"
+    ></script>
+    <script src="ac70cFecha.js"
+            type="text/javascript"
+    ></script>
   </head>
   <body>
     <div id="loading-overlay"></div>
 
     <!-- ESTADOS -->
-    <ul id="tipo_licitaciones" style="visibility: hidden">
-      <li id="li-licitacion-ta" class="selected">
-        <a href="#" id="licitacion-ta">Todos los anuncios</a>
+    <ul id="tipo_licitaciones"
+        style="visibility: hidden"
+    >
+      <li class="selected"
+          id="li-licitacion-ta"
+      >
+        <a id="licitacion-ta"
+           href="#"
+        >Todos los anuncios</a>
         <script type="text/javascript">
           $("a#licitacion-ta").click(function () {
             $("#tipoInformacion").attr("value", "ta");
@@ -37,7 +56,9 @@
         </script>
       </li>
       <li id="li-licitacion-ap">
-        <a href="#" id="licitacion-ap">Anuncios previos</a>
+        <a id="licitacion-ap"
+           href="#"
+        >Anuncios previos</a>
         <script type="text/javascript">
           $("a#licitacion-ap").click(function () {
             $("#tipoInformacion").attr("value", "ap");
@@ -51,7 +72,9 @@
         </script>
       </li>
       <li id="li-licitacion-cpm">
-        <a href="#" id="licitacion-cpm">Consulta Preliminar de Mercado</a>
+        <a id="licitacion-cpm"
+           href="#"
+        >Consulta Preliminar de Mercado</a>
         <script type="text/javascript">
           $("a#licitacion-cpm").click(function () {
             $("#tipoInformacion").attr("value", "cpm");
@@ -65,7 +88,9 @@
         </script>
       </li>
       <li id="li-licitacion-pac">
-        <a href="#" id="licitacion-pac">Plan Anual de Contratación</a>
+        <a id="licitacion-pac"
+           href="#"
+        >Plan Anual de Contrataci&oacute;n</a>
         <script type="text/javascript">
           $("a#licitacion-pac").click(function () {
             $("#tipoInformacion").attr("value", "pac");
@@ -79,7 +104,9 @@
         </script>
       </li>
       <li id="li-licitacion-al">
-        <a href="#" id="licitacion-al">Anuncios Abiertos</a>
+        <a id="licitacion-al"
+           href="#"
+        >Anuncios Abiertos</a>
         <script type="text/javascript">
           $("a#licitacion-al").click(function () {
             $("#tipoInformacion").attr("value", "al");
@@ -93,7 +120,9 @@
         </script>
       </li>
       <li id="li-licitacion-ac">
-        <a href="#" id="licitacion-ac">Anuncios en Estudio</a>
+        <a id="licitacion-ac"
+           href="#"
+        >Anuncios en Estudio</a>
         <script type="text/javascript">
           $("a#licitacion-ac").click(function () {
             $("#tipoInformacion").attr("value", "ac");
@@ -107,7 +136,9 @@
         </script>
       </li>
       <li id="li-licitacion-an">
-        <a href="#" id="licitacion-an">Anuncios Anulados</a>
+        <a id="licitacion-an"
+           href="#"
+        >Anuncios Anulados</a>
         <script type="text/javascript">
           $("a#licitacion-an").click(function () {
             $("#tipoInformacion").attr("value", "an");
@@ -121,7 +152,9 @@
         </script>
       </li>
       <li id="li-licitacion-ad">
-        <a href="#" id="licitacion-ad">Adjudicaciones</a>
+        <a id="licitacion-ad"
+           href="#"
+        >Adjudicaciones</a>
         <script type="text/javascript">
           $("a#licitacion-ad").click(function () {
             $("#tipoInformacion").attr("value", "ad");
@@ -135,7 +168,9 @@
         </script>
       </li>
       <li id="li-licitacion-de">
-        <a href="#" id="licitacion-de">Desistimientos</a>
+        <a id="licitacion-de"
+           href="#"
+        >Desistimientos</a>
         <script type="text/javascript">
           $("a#licitacion-de").click(function () {
             $("#tipoInformacion").attr("value", "de");
@@ -149,7 +184,9 @@
         </script>
       </li>
       <li id="li-licitacion-fo">
-        <a href="#" id="licitacion-fo">Formalizaciones de Contrato</a>
+        <a id="licitacion-fo"
+           href="#"
+        >Formalizaciones de Contrato</a>
         <script type="text/javascript">
           $("a#licitacion-fo").click(function () {
             $("#tipoInformacion").attr("value", "fo");
@@ -163,7 +200,9 @@
         </script>
       </li>
       <li id="li-licitacion-ds">
-        <a href="#" id="licitacion-ds">Desierto</a>
+        <a id="licitacion-ds"
+           href="#"
+        >Desierto</a>
         <script type="text/javascript">
           $("a#licitacion-ds").click(function () {
             $("#tipoInformacion").attr("value", "ds");
@@ -177,7 +216,9 @@
         </script>
       </li>
       <li id="li-licitacion-hi">
-        <a href="#" id="licitacion-hi">Histórico</a>
+        <a id="licitacion-hi"
+           href="#"
+        >Hist&oacute;rico</a>
         <script type="text/javascript">
           $("a#licitacion-hi").click(function () {
             $("#tipoInformacion").attr("value", "hi");
@@ -191,7 +232,9 @@
         </script>
       </li>
       <li id="li-licitacion-mo">
-        <a href="#" id="licitacion-mo">Modificación del Contrato</a>
+        <a id="licitacion-mo"
+           href="#"
+        >Modificaci&oacute;n del Contrato</a>
         <script type="text/javascript">
           $("a#licitacion-mo").click(function () {
             $("#tipoInformacion").attr("value", "mo");
@@ -205,7 +248,9 @@
         </script>
       </li>
       <li id="li-licitacion-me">
-        <a href="#" id="licitacion-me">Contratos menores</a>
+        <a id="licitacion-me"
+           href="#"
+        >Contratos menores</a>
         <script type="text/javascript">
           $("a#licitacion-me").click(function () {
             $("#tipoInformacion").attr("value", "me");
@@ -221,9 +266,15 @@
     </ul>
 
     <!-- PROCEDIMIENTOS -->
-    <ul id="tipo_procedimientos" style="visibility: hidden">
-      <li id="li-procedimiento-ta" class="selected">
-        <a href="#" id="procedimiento-ta">Todos los anuncios</a>
+    <ul id="tipo_procedimientos"
+        style="visibility: hidden"
+    >
+      <li class="selected"
+          id="li-procedimiento-ta"
+      >
+        <a id="procedimiento-ta"
+           href="#"
+        >Todos los anuncios</a>
         <script type="text/javascript">
           $("a#procedimiento-ta").click(function () {
             $("#tipoInformacion").attr("value", "ta");
@@ -237,7 +288,9 @@
         </script>
       </li>
       <li id="li-procedimiento-ab">
-        <a href="#" id="procedimiento-ab">Abiertos</a>
+        <a id="procedimiento-ab"
+           href="#"
+        >Abiertos</a>
         <script type="text/javascript">
           $("a#procedimiento-ab").click(function () {
             $("#tipoInformacion").attr("value", "ab");
@@ -251,7 +304,9 @@
         </script>
       </li>
       <li id="li-procedimiento-re">
-        <a href="#" id="procedimiento-re">Restringidos</a>
+        <a id="procedimiento-re"
+           href="#"
+        >Restringidos</a>
         <script type="text/javascript">
           $("a#procedimiento-re").click(function () {
             $("#tipoInformacion").attr("value", "re");
@@ -265,7 +320,9 @@
         </script>
       </li>
       <li id="li-procedimiento-dc">
-        <a href="#" id="procedimiento-dc">Diálogo Competitivo</a>
+        <a id="procedimiento-dc"
+           href="#"
+        >Di&aacute;logo Competitivo</a>
         <script type="text/javascript">
           $("a#procedimiento-dc").click(function () {
             $("#tipoInformacion").attr("value", "dc");
@@ -279,7 +336,9 @@
         </script>
       </li>
       <li id="li-procedimiento-am">
-        <a href="#" id="procedimiento-am">Acuerdo Marco</a>
+        <a id="procedimiento-am"
+           href="#"
+        >Acuerdo Marco</a>
         <script type="text/javascript">
           $("a#procedimiento-am").click(function () {
             $("#tipoInformacion").attr("value", "am");
@@ -293,7 +352,9 @@
         </script>
       </li>
       <li id="li-procedimiento-sd">
-        <a href="#" id="procedimiento-sd">Sistema Dinámico de Contratación</a>
+        <a id="procedimiento-sd"
+           href="#"
+        >Sistema Din&aacute;mico de Contrataci&oacute;n</a>
         <script type="text/javascript">
           $("a#procedimiento-sd").click(function () {
             $("#tipoInformacion").attr("value", "sd");
@@ -310,7 +371,9 @@
         </script>
       </li>
       <li id="li-procedimiento-ns">
-        <a href="#" id="procedimiento-ns">Negociados sin publicidad</a>
+        <a id="procedimiento-ns"
+           href="#"
+        >Negociados sin publicidad</a>
         <script type="text/javascript">
           $("a#procedimiento-ns").click(function () {
             $("#tipoInformacion").attr("value", "ns");
@@ -324,7 +387,9 @@
         </script>
       </li>
       <li id="li-procedimiento-nc">
-        <a href="#" id="procedimiento-nc">Negociados con publicidad</a>
+        <a id="procedimiento-nc"
+           href="#"
+        >Negociados con publicidad</a>
         <script type="text/javascript">
           $("a#procedimiento-nc").click(function () {
             $("#tipoInformacion").attr("value", "nc");
@@ -338,7 +403,9 @@
         </script>
       </li>
       <li id="li-procedimiento-di">
-        <a href="#" id="procedimiento-di">Directos/Contrato Menor</a>
+        <a id="procedimiento-di"
+           href="#"
+        >Directos/Contrato Menor</a>
         <script type="text/javascript">
           $("a#procedimiento-di").click(function () {
             $("#tipoInformacion").attr("value", "di");
@@ -352,7 +419,9 @@
         </script>
       </li>
       <li id="li-procedimiento-da">
-        <a href="#" id="procedimiento-da">Derivados de Acuerdo Marco</a>
+        <a id="procedimiento-da"
+           href="#"
+        >Derivados de Acuerdo Marco</a>
         <script type="text/javascript">
           $("a#procedimiento-da").click(function () {
             $("#tipoInformacion").attr("value", "da");
@@ -366,7 +435,9 @@
         </script>
       </li>
       <li id="li-procedimiento-cp">
-        <a href="#" id="procedimiento-cp">Concurso de Proyectos</a>
+        <a id="procedimiento-cp"
+           href="#"
+        >Concurso de Proyectos</a>
         <script type="text/javascript">
           $("a#procedimiento-cp").click(function () {
             $("#tipoInformacion").attr("value", "cp");
@@ -380,7 +451,9 @@
         </script>
       </li>
       <li id="li-procedimiento-ai">
-        <a href="#" id="procedimiento-ai">Asociación para la Innovación</a>
+        <a id="procedimiento-ai"
+           href="#"
+        >Asociaci&oacute;n para la Innovaci&oacute;n</a>
         <script type="text/javascript">
           $("a#procedimiento-ai").click(function () {
             $("#tipoInformacion").attr("value", "ai");
@@ -394,10 +467,10 @@
         </script>
       </li>
       <li id="li-procedimiento-cs">
-        <a href="#" id="procedimiento-cs"
-          >Contratos relativos a la prestación de asistencia sanitaria en
-          supuestos de urgencia</a
-        >
+        <a id="procedimiento-cs"
+           href="#"
+        >Contratos relativos a la prestaci&oacute;n de asistencia sanitaria en
+          supuestos de urgencia</a>
         <script type="text/javascript">
           $("a#procedimiento-cs").click(function () {
             $("#tipoInformacion").attr("value", "cs");
@@ -414,7 +487,9 @@
         </script>
       </li>
       <li id="li-procedimiento-as">
-        <a href="#" id="procedimiento-as">Abierto Simplificado</a>
+        <a id="procedimiento-as"
+           href="#"
+        >Abierto Simplificado</a>
         <script type="text/javascript">
           $("a#procedimiento-as").click(function () {
             $("#tipoInformacion").attr("value", "as");
@@ -428,7 +503,9 @@
         </script>
       </li>
       <li id="li-procedimiento-mp">
-        <a href="#" id="procedimiento-mp">Encargos a medios propios</a>
+        <a id="procedimiento-mp"
+           href="#"
+        >Encargos a medios propios</a>
         <script type="text/javascript">
           $("a#procedimiento-mp").click(function () {
             $("#tipoInformacion").attr("value", "mp");
@@ -442,7 +519,9 @@
         </script>
       </li>
       <li id="li-procedimiento-dem">
-        <a href="#" id="procedimiento-dem">Directo Emergencia</a>
+        <a id="procedimiento-dem"
+           href="#"
+        >Directo Emergencia</a>
         <script type="text/javascript">
           $("a#procedimiento-dem").click(function () {
             $("#tipoInformacion").attr("value", "dem");
@@ -456,7 +535,9 @@
         </script>
       </li>
       <li id="li-procedimiento-ass">
-        <a href="#" id="procedimiento-ass">Abierto supersimplificado</a>
+        <a id="procedimiento-ass"
+           href="#"
+        >Abierto supersimplificado</a>
         <script type="text/javascript">
           $("a#procedimiento-ass").click(function () {
             $("#tipoInformacion").attr("value", "ass");
@@ -470,7 +551,9 @@
         </script>
       </li>
       <li id="li-procedimiento-dcp">
-        <a href="#" id="procedimiento-dcp">Derivado de Concurso de Proyectos</a>
+        <a id="procedimiento-dcp"
+           href="#"
+        >Derivado de Concurso de Proyectos</a>
         <script type="text/javascript">
           $("a#procedimiento-dcp").click(function () {
             $("#tipoInformacion").attr("value", "dcp");
@@ -484,9 +567,9 @@
         </script>
       </li>
       <li id="li-procedimiento-dai">
-        <a href="#" id="procedimiento-dai"
-          >Derivado de asociación para la innovación</a
-        >
+        <a id="procedimiento-dai"
+           href="#"
+        >Derivado de asociaci&oacute;n para la innovaci&oacute;n</a>
         <script type="text/javascript">
           $("a#procedimiento-dai").click(function () {
             $("#tipoInformacion").attr("value", "dai");
@@ -503,9 +586,9 @@
         </script>
       </li>
       <li id="li-procedimiento-esp">
-        <a href="#" id="procedimiento-esp"
-          >Específico en un sistema dinámico de adquisición</a
-        >
+        <a id="procedimiento-esp"
+           href="#"
+        >Espec&iacute;fico en un sistema din&aacute;mico de adquisici&oacute;n</a>
         <script type="text/javascript">
           $("a#procedimiento-esp").click(function () {
             $("#tipoInformacion").attr("value", "esp");
@@ -522,7 +605,9 @@
         </script>
       </li>
       <li id="li-procedimiento-ot">
-        <a href="#" id="procedimiento-ot">Otros Anuncios</a>
+        <a id="procedimiento-ot"
+           href="#"
+        >Otros Anuncios</a>
         <script type="text/javascript">
           $("a#procedimiento-ot").click(function () {
             $("#tipoInformacion").attr("value", "ot");
@@ -539,42 +624,74 @@
 
     <br />
 
-    <form method="_GET" id="opciones">
-      <input type="hidden" value="es" id="idioma" />
-      <input type="hidden" value="6" id="poder" />
-      <input type="hidden" value="" id="entidad" />
+    <form id="opciones"
+          method="_GET"
+    >
+      <input id="idioma"
+             type="hidden"
+             value="es"
+      />
+      <input id="poder"
+             type="hidden"
+             value="6"
+      />
+      <input id="entidad"
+             type="hidden"
+             value=""
+      />
 
-      <input type="hidden" value="" id="agrupacion" />
-      <input type="hidden" value="" id="estado" />
-      <input type="hidden" value="" id="tipoContrato" />
-      <input type="hidden" value="" id="numResult" />
+      <input id="agrupacion"
+             type="hidden"
+             value=""
+      />
+      <input id="estado"
+             type="hidden"
+             value=""
+      />
+      <input id="tipoContrato"
+             type="hidden"
+             value=""
+      />
+      <input id="numResult"
+             type="hidden"
+             value=""
+      />
 
-      <input type="hidden" value="" id="titulo" />
+      <input id="titulo"
+             type="hidden"
+             value=""
+      />
 
-      <input type="hidden" value="false" id="restricciones" />
+      <input id="restricciones"
+             type="hidden"
+             value="false"
+      />
 
       <!-- Caso últimas licitaciones -->
 
-      <input type="hidden" value="al" id="tipoInformacion" />
+      <input id="tipoInformacion"
+             type="hidden"
+             value="al"
+      />
 
       <div style="display: none">
-        <input
-          type="button"
-          id="actualizar"
-          name="actualizar"
-          value="actualizar"
-          style="visibility: hidden"
+        <input id="actualizar"
+               name="actualizar"
+               style="visibility: hidden"
+               type="button"
+               value="actualizar"
         />
-        <input
-          type="button"
-          id="probar"
-          name="probar"
-          value="probar"
-          style="visibility: hidden"
+        <input id="probar"
+               name="probar"
+               style="visibility: hidden"
+               type="button"
+               value="probar"
         />
       </div>
     </form>
-    <div id="jswidget" class="widget"></div>
+    <div class="widget"
+         id="jswidget"
+    ></div>
     <script>
       $(document).ready(function () {
         $("a#licitacion-al").click();

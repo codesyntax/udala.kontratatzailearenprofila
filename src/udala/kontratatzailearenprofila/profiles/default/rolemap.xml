@@ -3,27 +3,33 @@
   <permissions>
     <!-- -*- extra stuff goes here -*- -->
 
-    <permission name="udala.kontratatzailearenprofila: Add ContractRegistry" acquire="True">
-      <role name="Manager"/>
-      <role name="Site Administrator"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
+    <permission acquire="True"
+                name="udala.kontratatzailearenprofila: Add ContractRegistry"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
     </permission>
 
 
-    <permission name="udala.kontratatzailearenprofila: Add AlertSubscription" acquire="True">
-      <role name="Manager"/>
-      <role name="Site Administrator"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
+    <permission acquire="True"
+                name="udala.kontratatzailearenprofila: Add AlertSubscription"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
     </permission>
 
 
-    <permission name="udala.kontratatzailearenprofila: Add ContractorsProfile" acquire="True">
-      <role name="Manager"/>
-      <role name="Site Administrator"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
+    <permission acquire="True"
+                name="udala.kontratatzailearenprofila: Add ContractorsProfile"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
     </permission>
 
   </permissions>
