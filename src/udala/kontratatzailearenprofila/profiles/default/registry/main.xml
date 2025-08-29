@@ -10,6 +10,7 @@
   >
     <value purge="false">
       <element>ContractorsProfile</element>
+      <element>AlertSubscription</element>
     </value>
   </record>
 </registry>

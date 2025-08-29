@@ -7,6 +7,7 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <!-- Contractors' Profile -->
   <browser:page
       name="view"
       for="..content.contractors_profile.IContractorsProfile"
@@ -29,6 +30,34 @@
       name="custom.css"
       for="..content.contractors_profile.IContractorsProfile"
       class=".contractors_profile_custom_css_view.ContractorsProfileCustomCSSView"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
+
+
+  <!-- Alert Subscription -->
+  <browser:page
+      name="view"
+      for="..content.alert_subscription.IAlertSubscription"
+      class=".alert_subscription_view.AlertSubscriptionView"
+      template="alert_subscription_view.pt"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
+
+
+  <browser:page
+      name="iframe-view"
+      for="..content.alert_subscription.IAlertSubscription"
+      class=".alert_subscription_iframe_view.AlertSubscriptionIframeView"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="custom.css"
+      for="..content.alert_subscription.IAlertSubscription"
+      class=".alert_subscription_custom_css_view.AlertSubscriptionCustomCSSView"
       permission="zope2.View"
       layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
       />

@@ -6,55 +6,43 @@ from plone.dexterity.content import Item
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
+from zope import schema
 from zope.interface import implementer
 
 
-# from udala.kontratatzailearenprofila import _
+from udala.kontratatzailearenprofila import _
 
 
 class IAlertSubscription(model.Schema):
     """ Marker interface and Dexterity Python Schema for AlertSubscription
     """
-    # If you want, you can load a xml model created TTW here
-    # and customize it in Python:
+    code = schema.TextLine(
+        title=_(
+            "Code for this administration",
+        ),
+        description=_(
+            "You need to ask this code to the Basque Government",
+        ),
+        default="6",
+        required=True,
+        readonly=False,
+    )
 
-    # model.load('alert_subscription.xml')
-
-    # directives.widget(level=RadioFieldWidget)
-    # level = schema.Choice(
-    #     title=_(u'Sponsoring Level'),
-    #     vocabulary=LevelVocabulary,
-    #     required=True
-    # )
-
-    # text = RichText(
-    #     title=_(u'Text'),
-    #     required=False
-    # )
-
-    # url = schema.URI(
-    #     title=_(u'Link'),
-    #     required=False
-    # )
-
-    # fieldset('Images', fields=['logo', 'advertisement'])
-    # logo = namedfile.NamedBlobImage(
-    #     title=_(u'Logo'),
-    #     required=False,
-    # )
-
-    # advertisement = namedfile.NamedBlobImage(
-    #     title=_(u'Advertisement (Gold-sponsors and above)'),
-    #     required=False,
-    # )
-
-    # directives.read_permission(notes='cmf.ManagePortal')
-    # directives.write_permission(notes='cmf.ManagePortal')
-    # notes = RichText(
-    #     title=_(u'Secret Notes (only for site-admins)'),
-    #     required=False
-    # )
+    custom_css = schema.Text(
+        title=_(
+            "Custom CSS",
+        ),
+        description=_(
+            "This CSS fill be loaded in the widget. You can use the following "
+            "CSS variables to style the widget: --subscription-button-color, "
+            "--subscription-button-hover-color, --subscription-font-family, "
+            "--subscription-body-color, --subscription-legend-background-color "
+            "You can also add any other CSS rules you want",
+        ),
+        default="",
+        required=False,
+        readonly=False,
+    )
 
 
 @implementer(IAlertSubscription)

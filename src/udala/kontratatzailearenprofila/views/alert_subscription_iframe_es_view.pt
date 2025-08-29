@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="es"
+      xml:lang="es"
+>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      var cabeceraError =
+        "<p> No es posible realizar la operación solicitada debido a los siguientes motivos: </p>";
+      var errorMailFormato = "Introduzca un E-mail válido";
+      var errorTelefonoFormato = "Introduzca un teléfono válido";
+      var errorCaptcha = "Letras incorrectas";
+      var errorDatosObligatorios = "Faltan datos obligatorios";
+    </script>
+    <link href="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/ac70cWidgetSuscripcionPoder.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/jquery-3.6.0.min.js"
+            type="text/javascript"
+    ></script>
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/ac70cWidgetSuscripcionPoder.js"
+            type="text/javascript"
+    ></script>
+    <link href="${context/absolute_url}/custom.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <div id="widget_poderadjudicador">
+      <p class="titulo">Suscripci&oacute;n a anuncios</p>
+      <div id="widget_poderadjudicadorform">
+        <form id="formSuscripcionPoder">
+          <input id="idPoder"
+                 name="p01"
+                 type="hidden"
+                 value="${context/code}"
+          />
+          <input id="idCaptcha"
+                 name="idCaptcha"
+                 type="hidden"
+          />
+          <fieldset id="fldSuscripcion"
+                    title="Datos de la Suscripción"
+          >
+            <legend>Datos de la Suscripci&oacute;n</legend>
+            <div class="invisible"
+                 id="divErrores"
+            ></div>
+            <ul>
+              <li>
+                <fieldset id="flsTipoSuscripcion"
+                          title="¿Desea suscribirse?"
+                >
+                  <legend class="lgdTipoSuscripcion">
+                    &iquest;Desea suscribirse?: *
+                  </legend>
+                  <label for="tipoS1">
+                    <input id="tipoS1"
+                           checked="checked"
+                           name="p02"
+                           type="radio"
+                           value="1"
+                    />Solo a nuevos anuncios
+                  </label>
+                  <label for="tipoS2">
+                    <input id="tipoS2"
+                           name="p02"
+                           type="radio"
+                           value="2"
+                    />Todas
+                    las publicaciones
+                  </label>
+                </fieldset>
+              </li>
+              <li>
+                <label for="emailAlta">E-mail: *</label>
+                <input id="emailAlta"
+                       maxlength="100"
+                       name="p05"
+                       placeholder="E-mail"
+                       size="50"
+                       title="e-mail"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="nombre">Nombre Contacto:</label>
+                <input id="nombre"
+                       maxlength="100"
+                       name="p06"
+                       placeholder="Nombre Contacto"
+                       size="50"
+                       title="Nombre Contacto"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="empresa">Nombre Empresa:</label>
+                <input id="empresa"
+                       maxlength="100"
+                       name="p07"
+                       placeholder="Nombre Empresa"
+                       size="50"
+                       title="Nombre Empresa"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="telefono">Tel&eacute;fono Contacto:</label>
+                <input id="telefono"
+                       maxlength="9"
+                       name="p08"
+                       placeholder="Teléfono Contacto"
+                       size="50"
+                       title="Teléfono Contacto"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="txtCaptcha"
+                       style="margin-top: 11px"
+                >
+                  Introduzca las letras siguientes: *
+                </label>
+                <input id="txtCaptcha"
+                       maxlength="5"
+                       name="txtCaptcha"
+                       size="20"
+                       style="width: 60px"
+                       title="captcha"
+                       type="text"
+                       value=""
+                />
+                <img id="captcha"
+                     style="margin-bottom: -8px"
+                     width="135"
+                />
+              </li>
+              <p id="pBotones">
+                <input id="btnAlta"
+                       name="btnAlta"
+                       title="Enviar Suscripción"
+                       type="button"
+                       value="Enviar Suscripción"
+                />
+              </p>
+            </ul>
+          </fieldset>
+          <p class="leyendaoblig">
+            Nota: Los campos marcados con un * son obligatorios
+          </p>
+        </form>
+
+        <form id="formCancelarSuscripcionPoder">
+          <input id="idPoderCancelar"
+                 name="p01"
+                 type="hidden"
+                 value=""
+          />
+          <fieldset id="fldSuscripcion"
+                    title="Dar de baja la Suscripción"
+          >
+            <legend>Dar de baja la Suscripci&oacute;n</legend>
+            <div class="invisible"
+                 id="divErroresBaja"
+            ></div>
+            <ul>
+              <li>
+                <label for="emailBaja">E-mail: *</label>
+                <input id="emailBaja"
+                       maxlength="100"
+                       name="p05"
+                       placeholder="E-mail"
+                       size="50"
+                       title="e-mail"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <p id="pBotones">
+                <input id="btnBaja"
+                       name="btnBaja"
+                       title="Cancelar Suscripción"
+                       type="button"
+                       value="Cancelar Suscripción"
+                />
+              </p>
+            </ul>
+          </fieldset>
+          <p class="leyendaoblig">
+            Nota: Los campos marcados con un * son obligatorios
+          </p>
+        </form>
+        <div>
+          <a href="https://www.euskadi.eus/web01-aprat/es/contenidos/informacion/rat/es_def/es/contenidos/informacion/rat/es_def/adjuntos/1194_es.html"
+             target="_blank"
+          >
+            Informaci&oacute;n b&aacute;sica sobre protecci&oacute;n de datos
+          </a>
+        </div>
+      </div>
+
+      <div class="invisible"
+           id="widget_poderadjudicadorconfirm"
+      >
+        <fieldset id="fldConfirmacion"
+                  title="Confirmación de suscripción a anuncios"
+        >
+          <legend>Confirmaci&oacute;n de suscripci&oacute;n a anuncios</legend>
+          <p>
+            Gracias por utilizar el servicio de alertas del Perfil de
+            Contratante de la Contrataci&oacute;n Publica en Euskadi.
+          </p>
+          <p>
+            Recibir&aacute; en su correo electr&oacute;nico la informaci&oacute;n a la que se ha
+            suscrito.
+          </p>
+          <p>
+            En el correo recibir&aacute; tambi&eacute;n las instrucciones para poder darse de
+            baja del servicio.
+          </p>
+        </fieldset>
+      </div>
+
+      <div class="invisible"
+           id="widget_poderadjudicadorerror"
+      >
+        <fieldset id="fldConfimacionSuscripcion"
+                  title="Aviso de error en la suscripción a anuncios"
+        >
+          <legend>Aviso de error en la suscripci&oacute;n a anuncios</legend>
+          <p>
+            No se ha podido completar la suscripci&oacute;n a anuncios del poder
+            adjudicador.
+          </p>
+        </fieldset>
+      </div>
+
+      <div class="invisible"
+           id="widget_bajapoderadjudicadorconfirm"
+      >
+        <fieldset id="fldConfirmacion"
+                  title="Confirmación de suscripción a anuncios"
+        >
+          <legend>Confirmaci&oacute;n de baja de suscripci&oacute;n a anuncios</legend>
+          <p>Su solicitud de baja ha sido procesada satisfactorimente.</p>
+        </fieldset>
+      </div>
+
+      <div class="invisible"
+           id="widget_bajapoderadjudicadorerror"
+      >
+        <fieldset id="fldConfimacionSuscripcion"
+                  title="Aviso de error en la suscripción a anuncios"
+        >
+          <legend>Aviso de error en la baja de suscripci&oacute;n a anuncios</legend>
+          <p>
+            No se ha podido completar la baja de suscripci&oacute;n a anuncios del
+            poder adjudicador.
+          </p>
+        </fieldset>
+      </div>
+
+      <p class="widget_pie">
+        <a href="https://apps.euskadi.eus/w32-kpehome/es"
+           target="_blank"
+        >
+          <img alt="Contratación Publica en Euskadi"
+               src="++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/logo_contratacion.jpg"
+          />
+        </a>
+      </p>
+    </div>
+  </body>
+</html>

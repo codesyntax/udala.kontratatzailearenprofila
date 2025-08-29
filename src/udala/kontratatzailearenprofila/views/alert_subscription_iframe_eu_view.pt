@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="eu"
+      xml:lang="eu"
+>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      var cabeceraError =
+        "<p> Ezin izan da eskatutako eragiketa burutu ondorengo arrazoiengatik: </p>";
+      var errorMailFormato = "Sar ezazu helbide elektroniko zuzen bat";
+      var errorTelefonoFormato = "Sar ezazu telefono zuzen bat";
+      var errorCaptcha = "Letra okerrak";
+      var errorDatosObligatorios = "Nahitaezko datuak falta dira";
+    </script>
+    <link href="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/ac70cWidgetSuscripcionPoder.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/jquery-3.6.0.min.js"
+            type="text/javascript"
+    ></script>
+    <script src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/ac70cWidgetSuscripcionPoder.js"
+            type="text/javascript"
+    ></script>
+    <link href="${context/absolute_url}/custom.css"
+          rel="stylesheet"
+          type="text/css"
+    />
+    <div id="widget_poderadjudicador">
+      <p class="titulo">Argitalpenen harpidetza</p>
+      <div id="widget_poderadjudicadorform">
+        <form id="formSuscripcionPoder">
+          <input id="idPoder"
+                 name="p01"
+                 type="hidden"
+                 value="${context/code}"
+          />
+          <input id="idCaptcha"
+                 name="idCaptcha"
+                 type="hidden"
+          />
+          <fieldset id="fldSuscripcion"
+                    title="Harpidetza Datuak"
+          >
+            <legend>Harpidetza Datuak</legend>
+            <div class="invisible"
+                 id="divErrores"
+            ></div>
+            <ul>
+              <li>
+                <fieldset id="flsTipoSuscripcion"
+                          title="¿Harpidetu nahi al duzu?"
+                >
+                  <legend class="lgdTipoSuscripcion">
+                    &iquest;Harpidetu nahi al duzu?: *
+                  </legend>
+                  <label for="tipoS1">
+                    <input id="tipoS1"
+                           checked="checked"
+                           name="p02"
+                           type="radio"
+                           value="1"
+                    />Argitalpen berrietan soilik
+                  </label>
+                  <label for="tipoS2">
+                    <input id="tipoS2"
+                           name="p02"
+                           type="radio"
+                           value="2"
+                    />Argitalpen guztiak
+                  </label>
+                </fieldset>
+              </li>
+              <li>
+                <label for="emailAlta">Helbide Elektronikoa: *</label>
+                <input id="emailAlta"
+                       maxlength="100"
+                       name="p05"
+                       placeholder="Helbide Elektronikoa"
+                       size="50"
+                       title="Helbide Elektronikoa"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="nombre">Kontaktuaren Izena:</label>
+                <input id="nombre"
+                       maxlength="100"
+                       name="p06"
+                       placeholder="Kontaktuaren Izena"
+                       size="50"
+                       title="Kontaktuaren Izena"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="empresa">Enpresaren Izena:</label>
+                <input id="empresa"
+                       maxlength="100"
+                       name="p07"
+                       placeholder="Enpresaren Izena"
+                       size="50"
+                       title="Enpresaren Izena"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="telefono">Telefono zenbakia:</label>
+                <input id="telefono"
+                       maxlength="9"
+                       name="p08"
+                       placeholder="Telefono zenbakia"
+                       size="50"
+                       title="Tel&eacute;fono Contacto"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <li>
+                <label for="txtCaptcha"
+                       style="margin-top: 11px"
+                >
+                  Sar itzazu hurrengo letrak: *
+                </label>
+                <input id="txtCaptcha"
+                       maxlength="5"
+                       name="txtCaptcha"
+                       size="20"
+                       style="width: 60px"
+                       title="captcha"
+                       type="text"
+                       value=""
+                />
+                <img id="captcha"
+                     style="margin-bottom: -8px"
+                     width="135"
+                />
+              </li>
+              <p id="pBotones">
+                <input id="btnAlta"
+                       name="btnAlta"
+                       title="Harpidetza Bidali"
+                       type="button"
+                       value="Harpidetza Bidali"
+                />
+              </p>
+            </ul>
+          </fieldset>
+          <p class="leyendaoblig">
+            Oharra: *'(e)z markatutako eremu guztiak nahitaezkoak dira
+          </p>
+        </form>
+
+        <form id="formCancelarSuscripcionPoder">
+          <input id="idPoderCancelar"
+                 name="p01"
+                 type="hidden"
+                 value=""
+          />
+          <fieldset id="fldSuscripcion"
+                    title="Dar de baja la Suscripcion"
+          >
+            <legend>Harpidetzari baja eman</legend>
+            <div class="invisible"
+                 id="divErroresBaja"
+            ></div>
+            <ul>
+              <li>
+                <label for="emailBaja">Helbide Elektronikoa: *</label>
+                <input id="emailBaja"
+                       maxlength="100"
+                       name="p05"
+                       placeholder="Helbide Elektronikoa"
+                       size="50"
+                       title="e-mail"
+                       type="text"
+                       value=""
+                />
+              </li>
+              <p id="pBotones">
+                <input id="btnBaja"
+                       name="btnBaja"
+                       placeholder="Helbide Elektronikoa"
+                       title="Harpidetza utzi"
+                       type="button"
+                       value="Harpidetza utzi"
+                />
+              </p>
+            </ul>
+          </fieldset>
+          <p class="leyendaoblig">
+            Oharra: *'(e)z markatutako eremu guztiak nahitaezkoak dira
+          </p>
+        </form>
+        <div>
+          <a href="https://www.euskadi.eus/web01-aprat/eu/contenidos/informacion/rat/eu_def/es/contenidos/informacion/rat/eu_def/adjuntos/1194_eu.html"
+             target="_blank"
+          >
+            Datuen babesari buruzko oinarrizko informazioa
+          </a>
+        </div>
+      </div>
+
+      <div class="invisible"
+           id="widget_poderadjudicadorconfirm"
+      >
+        <fieldset id="fldConfirmacion"
+                  title="Argitalpenen harpidetzaren baieztapena"
+        >
+          <legend>Argitalpenen harpidetzaren baieztapena</legend>
+          <p>
+            Eskerrik asko Euskadiko Kontratatzailearen Profilaren alerta
+            zerbitzua erabiltzeagatik.
+          </p>
+          <p>
+            Laster mezua jasoko duzu adierazi duzun helbide elektronikoan
+            harpidetu zaren informazioarekin.
+          </p>
+          <p>
+            Horrez gainera, zerbitzua uzteko jarraibideak ere edukiko dituzu
+            mezuan.
+          </p>
+        </fieldset>
+      </div>
+
+      <div class="invisible"
+           id="widget_poderadjudicadorerror"
+      >
+        <fieldset id="fldConfimacionSuscripcion"
+                  title="Errore oharra adjudikatzeko ahal baten argitalpenen harpidetzan"
+        >
+          <legend>
+            Errore oharra adjudikatzeko ahal baten argitalpenen harpidetzan
+          </legend>
+          <p>
+            Ezin izan da adjudikatzeko ahal baten argitalpenen harpidetza
+            burutu.
+          </p>
+        </fieldset>
+      </div>
+
+      <div class="invisible"
+           id="widget_bajapoderadjudicadorconfirm"
+      >
+        <fieldset id="fldConfirmacion"
+                  title="Argitalpenen harpidetzaren baja ematearen baieztapena"
+        >
+          <legend>Argitalpenen harpidetzaren baja ematearen baieztapena</legend>
+          <p>Zure baja eskaera ondo prozesatu da.</p>
+        </fieldset>
+      </div>
+
+      <div class="invisible"
+           id="widget_bajapoderadjudicadorerror"
+      >
+        <fieldset id="fldConfimacionSuscripcion"
+                  title="Errore oharra argitalpenen harpidetzaren baja ematerakoan"
+        >
+          <legend>
+            Errore oharra argitalpenen harpidetzaren baja ematerakoan
+          </legend>
+          <p>
+            Ezin izan da adjudikatzeko ahal baten argitalpenen harpidetzaren
+            baja ematea burutu.
+          </p>
+        </fieldset>
+      </div>
+
+      <p class="widget_pie">
+        <a href="https://apps.euskadi.eus/w32-kpehome/eu"
+           target="_blank"
+        >
+          <img alt="Kontratazio Publikoa Euskadin"
+               src="${here/portal_url}/++plone++udala.kontratatzailearenprofila/widgetSuscripcionAlertas/logo_contratacion.jpg"
+          />
+        </a>
+      </p>
+    </div>
+  </body>
+</html>
