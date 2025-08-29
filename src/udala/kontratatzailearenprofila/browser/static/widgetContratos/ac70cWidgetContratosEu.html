@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eu" lang="eu">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="ac70cEstilos.css" />
+    <link rel="stylesheet" type="text/css" href="jquery.dataTables.1.9.0.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="jquery.dataTables.themeroller.css"
+    />
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script
+      src="jquery.dataTables.1.9.0.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="ac70cConfigurador.js" type="text/javascript"></script>
+    <script src="ac70cFecha.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="loading-overlay"></div>
+
+    <!-- ESTADOS -->
+    <ul id="agruEstado" style="visibility: hidden">
+      <li class="selected">
+        <a href="#" id="estado-tc">Kontratu guztiak</a>
+        <script type="text/javascript">
+          $("a#estado-tc").click(function () {
+            $("#estado").attr("value", "");
+            $("#titulo").attr("value", "Kontratu guztiak");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="estado-ce">Egiten ari direnak</a>
+        <script type="text/javascript">
+          $("a#estado-ce").click(function () {
+            $("#estado").attr("value", "4");
+            $("#titulo").attr("value", "Egiten ari diren kontratuak");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="estado-cf">Bukatuak</a>
+        <script type="text/javascript">
+          $("a#estado-cf").click(function () {
+            $("#estado").attr("value", "5");
+            $("#titulo").attr("value", "Bukatutako kontratuak");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+
+      <li>
+        <a href="#" id="estado-cm">Kontratu txikiak</a>
+        <script type="text/javascript">
+          $("a#estado-cm").click(function () {
+            $("#contratosMenores").attr("value", "TRUE");
+            $("#estado").attr("value", "");
+            $("#titulo").attr("value", "Kontratu txikiak");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+    </ul>
+
+    <ul id="agruTipoContrato" style="visibility: hidden">
+      <li class="selected">
+        <a href="#" id="tipoContrato-tc">Kontratu guztiak</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-tc").click(function () {
+            $("#tipoContrato").attr("value", "");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Kontratu guztiak");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-o">Obrak</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-o").click(function () {
+            $("#tipoContrato").attr("value", "1");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Obretako kontratuak");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-se">Zerbitzuak</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-se").click(function () {
+            $("#tipoContrato").attr("value", "2");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Zerbitzuetako kontratuak");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-su">Hornigaiak</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-su").click(function () {
+            $("#tipoContrato").attr("value", "3");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Hornigaietako kontratuak");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-ae">Administratibo bereziak</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-ae").click(function () {
+            $("#tipoContrato").attr("value", "4");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Administratibo berezietako kontratuak");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-cop">Obra publikoaren kontzesioa</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-cop").click(function () {
+            $("#tipoContrato").attr("value", "5");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr(
+              "value",
+              "Obra publikoaren kontsezioetako kontratuak"
+            );
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-gsp">Zerbitzu publikoen kudeaketa</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-gsp").click(function () {
+            $("#tipoContrato").attr("value", "6");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr(
+              "value",
+              "Zerbitzu publikoen kudeaketako kontratuak "
+            );
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-cspsp"
+          >Sektore publikoaren eta pribatuaren arteko kolaborazioa</a
+        >
+        <script type="text/javascript">
+          $("a#tipoContrato-cspsp").click(function () {
+            $("#tipoContrato").attr("value", "7");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr(
+              "value",
+              "Sektore publikoaren eta pribatuaren arteko kolaborazioetako kontratuak"
+            );
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-p">Pribatuak</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-p").click(function () {
+            $("#tipoContrato").attr("value", "1041");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Kontratu pribatuak");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+
+      <li>
+        <a href="#" id="tipoContrato-cm">Kontratu txikiak</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-cm").click(function () {
+            $("#tipoContrato").attr("value", "");
+            $("#contratosMenores").attr("value", "TRUE");
+            $("#titulo").attr("value", "Kontratu txikiak");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+    </ul>
+
+    <br />
+
+    <form method="_GET" id="opciones">
+      <input type="hidden" value="eu" id="idioma" />
+      <input type="hidden" value="6" id="poder" />
+      <input type="hidden" value="" id="agrupacion" />
+      <input type="hidden" value="" id="estado" />
+      <input type="hidden" value="" id="tipoContrato" />
+      <input type="hidden" value="" id="contratosMenores" />
+      <input type="hidden" value="" id="numResult" />
+      <input type="hidden" value="" id="entidad" />
+      <input type="hidden" value="" id="titulo" />
+
+      <div style="display: none">
+        <input
+          type="button"
+          id="actualizar"
+          name="actualizar"
+          value="actualizar"
+          style="visibility: hidden"
+        />
+        <input
+          type="button"
+          id="probar"
+          name="probar"
+          value="probar"
+          style="visibility: hidden"
+        />
+      </div>
+    </form>
+
+    <div id="jswidget" class="widget"></div>
+  </body>
+</html>

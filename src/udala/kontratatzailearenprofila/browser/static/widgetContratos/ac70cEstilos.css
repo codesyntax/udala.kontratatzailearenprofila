@@ -1,0 +1,175 @@
+
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background:#fff !important;
+  font-size:1rem;
+  color:#212121;
+}
+
+#agruEstado, #agruTipoContrato {
+  margin-left: 0 !important;
+  margin-bottom: 0.5em;
+  padding-left: 0;
+  width: 99%;
+}
+
+#agruEstado li, #agruTipoContrato li{
+  width: 200px;
+  display: inline;
+  list-style: outside none none;
+}
+
+#agruEstado li a, #agruTipoContrato li a {
+  display: block;
+  overflow: hidden;
+  color: #212121;
+  float: left;
+  margin-right: .75rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14px;
+  height: 22px;
+  padding-top: .5rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  background: #eee;
+  margin-bottom: .5rem;
+  border-radius: 5px;
+}
+
+#agruTipoContrato *:hover a ,#agruEstado *:hover a {
+  text-decoration: none;
+  background-color: #212121 !important;
+  color: #fff;
+}
+
+#agruEstado li.selected a ,#agruTipoContrato li.selected a {
+  text-decoration: none;
+  background-color: #212121 !important;
+  color: #fff;
+}
+
+.widget {
+  min-height: 100px;
+  overflow: auto;
+  overflow-x: hidden;
+  background-color: white;
+  color: #212121;
+  width:100%;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+}
+
+dl {
+  margin-left: 1em;
+}
+
+dt {
+  padding-bottom: 0;
+  padding-left: 0.5em;
+  padding-right: 0;
+  padding-top: 0.7em;
+}
+
+.widget dt dd {
+  border-bottom-color: #eee;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-bottom: 5px;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0;
+  padding-top: 3px;
+  color: #212121;
+}
+
+.widget h4{
+  font-family: "Montserrat", sans-serif !important;
+}
+
+#loading-overlay {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  left: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  background-color: #212121;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.loader_img{
+  position: absolute;
+  top: 0;
+  bottom: 0%;
+  left: 0;
+  right: 0%;
+  margin:auto;
+}
+
+/****tablea***/
+
+.widget table tr td a img {
+  border: 1px solid #eee;
+}
+
+.widget #tablaImagen {
+  width: 100%;
+}
+
+.widget #tablaWidget {
+  background-color: #ffffff !important;
+}
+
+table.dataTable {
+  margin: 0 auto;
+  clear: both;
+  width: 100%;
+  margin-bottom: 1rem !important;
+  border: 0;
+  color:#212121;
+}
+
+table.dataTable thead th {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  *cursor: hand;
+  font-size: .8rem;
+  text-align: left;
+  background-color: #eee;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+table.dataTable tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table.dataTable tr.odd {
+  background-color: #fff !important;
+}
+
+table.dataTable tr.even {
+  background-color: #f5f5f5 !important;
+}
+
+.widget table tbody tr td {
+  padding: 0.5rem 0.75rem;
+  vertical-align: top;
+  font-size: 0.9em;
+}
+
+.widget table tbody tr td a {
+  color: #ce004a;
+  text-decoration: none;
+}
+
+.dataTables_paginate {
+  margin-bottom: 1rem;
+}

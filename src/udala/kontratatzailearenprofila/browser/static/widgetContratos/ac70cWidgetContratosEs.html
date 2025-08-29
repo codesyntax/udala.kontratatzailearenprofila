@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="ac70cEstilos.css" />
+    <link rel="stylesheet" type="text/css" href="jquery.dataTables.1.9.0.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="jquery.dataTables.themeroller.css"
+    />
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script
+      src="jquery.dataTables.1.9.0.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="ac70cConfigurador.js" type="text/javascript"></script>
+    <script src="ac70cFecha.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="loading-overlay"></div>
+
+    <!-- ESTADOS -->
+    <ul id="agruEstado" style="visibility: hidden">
+      <li class="selected">
+        <a href="#" id="estado-tc">Todos los contratos</a>
+        <script type="text/javascript">
+          $("a#estado-tc").click(function () {
+            $("#estado").attr("value", "");
+            $("#titulo").attr("value", "Todos los contratos");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="estado-ce">En ejecución</a>
+        <script type="text/javascript">
+          $("a#estado-ce").click(function () {
+            $("#estado").attr("value", "4");
+            $("#titulo").attr("value", "Contratos en ejecución");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="estado-cf">Finalizados</a>
+        <script type="text/javascript">
+          $("a#estado-cf").click(function () {
+            $("#estado").attr("value", "5");
+            $("#titulo").attr("value", "Contratos finalizados");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="estado-cm">Contratos menores</a>
+        <script type="text/javascript">
+          $("a#estado-cm").click(function () {
+            $("#contratosMenores").attr("value", "TRUE");
+            $("#estado").attr("value", "");
+            $("#titulo").attr("value", "Contratos menores");
+            $("#agruEstado li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+    </ul>
+    <!-- TIPO CONTRATO -->
+    <ul id="agruTipoContrato" style="visibility: hidden">
+      <li class="selected">
+        <a href="#" id="tipoContrato-tc">Todos los contratos</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-tc").click(function () {
+            $("#tipoContrato").attr("value", "");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Todos los contratos");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-o">Obras</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-o").click(function () {
+            $("#tipoContrato").attr("value", "1");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Contratos de obras");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-se">Servicios</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-se").click(function () {
+            $("#tipoContrato").attr("value", "2");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Contratos de servicios");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-su">Suministros</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-su").click(function () {
+            $("#tipoContrato").attr("value", "3");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Contratos de suministros");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-ae">Administrativos especiales</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-ae").click(function () {
+            $("#tipoContrato").attr("value", "4");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr(
+              "value",
+              "Contratos de administrativos especiales"
+            );
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-cop">Concesión de obra pública</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-cop").click(function () {
+            $("#tipoContrato").attr("value", "5");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr(
+              "value",
+              "Contratos de concesión de obra pública"
+            );
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-gsp">Gestión de servicios públicos</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-gsp").click(function () {
+            $("#tipoContrato").attr("value", "6");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr(
+              "value",
+              "Contratos de gestión de servicios públicos"
+            );
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-cspsp"
+          >Colaboración entre el sector público y el privado</a
+        >
+        <script type="text/javascript">
+          $("a#tipoContrato-cspsp").click(function () {
+            $("#tipoContrato").attr("value", "7");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr(
+              "value",
+              "Contratos de colaboración entre el sector público y el privado"
+            );
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-p">Privados</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-p").click(function () {
+            $("#tipoContrato").attr("value", "1041");
+            $("#contratosMenores").attr("value", "FALSE");
+            $("#titulo").attr("value", "Contratos privados");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+      <li>
+        <a href="#" id="tipoContrato-cm">Contratos menores</a>
+        <script type="text/javascript">
+          $("a#tipoContrato-cm").click(function () {
+            $("#tipoContrato").attr("value", "");
+            $("#contratosMenores").attr("value", "TRUE");
+            $("#titulo").attr("value", "Contratos menores");
+            $("#agruTipoContrato li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $("#jswidget").html("");
+            C.iniciar();
+            return false;
+          });
+        </script>
+      </li>
+    </ul>
+
+    <br />
+
+    <form method="_GET" id="opciones">
+      <input type="hidden" value="es" id="idioma" />
+      <input type="hidden" value="6" id="poder" />
+      <input type="hidden" value="" id="agrupacion" />
+      <input type="hidden" value="" id="estado" />
+      <input type="hidden" value="" id="tipoContrato" />
+      <input type="hidden" value="" id="contratosMenores" />
+      <input type="hidden" value="" id="numResult" />
+      <input type="hidden" value="" id="entidad" />
+      <input type="hidden" value="" id="titulo" />
+
+      <div style="display: none">
+        <input
+          type="button"
+          id="actualizar"
+          name="actualizar"
+          value="actualizar"
+          style="visibility: hidden"
+        />
+        <input
+          type="button"
+          id="probar"
+          name="probar"
+          value="probar"
+          style="visibility: hidden"
+        />
+      </div>
+    </form>
+
+    <div id="jswidget" class="widget"></div>
+  </body>
+</html>
