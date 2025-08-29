@@ -62,5 +62,32 @@
       layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
       />
 
+  <!-- Contract Registry -->
+
+  <browser:page
+      name="view"
+      for="..content.contract_registry.IContractRegistry"
+      class=".contract_registry_view.ContractRegistryView"
+      template="contract_registry_view.pt"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
+
+
+  <browser:page
+      name="iframe-view"
+      for="..content.contract_registry.IContractRegistry"
+      class=".contract_registry_iframe_view.ContractRegistryIframeView"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="custom.css"
+      for="..content.contract_registry.IContractRegistry"
+      class=".contract_registry_custom_css_view.ContractRegistryCustomCSSView"
+      permission="zope2.View"
+      layer="udala.kontratatzailearenprofila.interfaces.IBrowserLayer"
+      />
 
 </configure>
