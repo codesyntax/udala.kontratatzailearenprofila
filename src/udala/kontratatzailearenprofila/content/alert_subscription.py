@@ -11,6 +11,8 @@ from zope.interface import implementer
 
 
 from udala.kontratatzailearenprofila import _
+from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
+from zope.interface import alsoProvides
 
 
 class IAlertSubscription(model.Schema):
@@ -44,7 +46,7 @@ class IAlertSubscription(model.Schema):
         readonly=False,
     )
 
-
+alsoProvides(IAlertSubscription["custom_css"], ILanguageIndependentField)
 @implementer(IAlertSubscription)
 class AlertSubscription(Item):
     """ Content-type class for IAlertSubscription

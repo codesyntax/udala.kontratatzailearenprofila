@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # from plone.app.textfield import RichText
 # from plone.autoform import directives
+from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
 from plone.dexterity.content import Item
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
@@ -11,6 +12,7 @@ from zope.interface import implementer
 
 
 from udala.kontratatzailearenprofila import _
+from zope.interface import alsoProvides
 
 
 class IContractRegistry(model.Schema):
@@ -44,7 +46,7 @@ class IContractRegistry(model.Schema):
         readonly=False,
     )
 
-
+alsoProvides(IContractRegistry["custom_css"], ILanguageIndependentField)
 @implementer(IContractRegistry)
 class ContractRegistry(Item):
     """ Content-type class for IContractRegistry

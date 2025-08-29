@@ -11,6 +11,8 @@ from zope.interface import implementer
 
 
 from udala.kontratatzailearenprofila import _
+from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
+from zope.interface import alsoProvides
 
 
 class IContractorsProfile(model.Schema):
@@ -43,7 +45,7 @@ class IContractorsProfile(model.Schema):
         required=False,
         readonly=False,
     )
-
+alsoProvides(IContractorsProfile["custom_css"], ILanguageIndependentField)
 
 @implementer(IContractorsProfile)
 class ContractorsProfile(Item):
