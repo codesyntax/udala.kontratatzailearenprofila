@@ -1,4 +1,3 @@
-
 # from udala.kontratatzailearenprofila import _
 from plone import api
 
