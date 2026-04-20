@@ -22,7 +22,7 @@ A Plone addon providing specific functionality for UdalPlone projects.
 
 ## Features
 
-- Custom content types and views specific to udala.kontratatzailearenprofila
+- Provides `Contractor's Profile`, `Contract Registry`, and `Alert Subscription` content types
 - RestAPI endpoints
 - Volto-ready backend setup
 
